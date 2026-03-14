@@ -23,3 +23,8 @@ npm run watch
 # Or make production build
 npm run build
 ```
+
+## Links
+
+* Web design library: [Bulma](https://bulma.io/documentation/)
+* Template engine: [Pug](https://pugjs.org/)

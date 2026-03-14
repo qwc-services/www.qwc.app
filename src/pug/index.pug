@@ -1,75 +1,37 @@
+doctype html
 html(lang="en")
     head
         title QWC - QGIS Webclient
-        meta(charset="utf-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
-        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Inter:400&subset=latin")
-        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap")
-        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap")
-        link(rel="stylesheet", href="css/bulma/bulma.min.css")
-        link(rel="icon", type="image/vnd.microsoft.icon", href="images/favicon.ico")
-        script(src="js/main.js")
+        include includes/head.pug
     body
         div(class="")
             section(class="has-background-light")
                 nav(class="navbar has-background-light py-5 is-relative")
                     div(class="container is-fluid")
-                        div(class="navbar-brand is-justify-content-space-between")
-                            a(class="navbar-item pl-0 title mb-0 is-size-4", href="#")
-                                img(src="images/logo-qwc.svg", alt="", width="100")
-                            button(class="button is-ghost is-hidden-desktop navbar-menu-open")
-                                svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                    path(fill-rule="evenodd", clip-rule="evenodd", d="M3.5 7C3.22386 7 3 6.77614 3 6.5C3 6.22386 3.22386 6 3.5 6H20.5C20.7761 6 21 6.22386 21 6.5C21 6.77614 20.7761 7 20.5 7H3.5ZM3.5 12C3.22386 12 3 11.7761 3 11.5C3 11.2239 3.22386 11 3.5 11H20.5C20.7761 11 21 11.2239 21 11.5C21 11.7761 20.7761 12 20.5 12H3.5ZM3 16.5C3 16.7761 3.22386 17 3.5 17H20.5C20.7761 17 21 16.7761 21 16.5C21 16.2239 20.7761 16 20.5 16H3.5C3.22386 16 3 16.2239 3 16.5Z", fill="#006251")
+                        include includes/navbar-logo.pug
                         div(class="navbar-menu")
-                            div(class="navbar-start")
-                                a(class="navbar-item", href="#") About
-                                |                 
-                                |                 
-                                a(class="navbar-item", href="#") Services
-                                |                 
-                                a(class="navbar-item", href="#") Testimonials
-                            div(class="navbar-end is-block-desktop is-hidden-touch")
-                                a(class="button is-warning", href="#") Contact Us
+                            div(class="navbar-end")
+                                include includes/menu.pug
                 div(class="section pt-0")
                     div(class="container mt-8")
                         div(class="mb-12 is-vcentered columns is-multiline")
                             div(class="column is-12 is-6-desktop mb-20 mb-0-desktop")
                                 div(class="has-mw-md-desktop")
-                                    h2(class="title is-size-2 is-spaced has-text-primary mb-5") Take care of your performance every day.
+                                    h2(class="title is-size-2 is-spaced has-text-primary mb-5") QGIS Webclient
                                     p(class="subtitle mb-6") Build a well-presented brand that everyone will love. Take care to develop resources continually and integrity them with previous projects.
                                     div(class="buttons")
                                         a(class="button is-primary", href="#") Track your performance
-                                        |                     
+                                        |
                                         a(class="button is-dark", href="#") Learn More
                             div(class="column is-12 is-6-desktop")
-                                img(class="image is-fullwidth", src="cronos-assets/images/example-scene.png", alt="")
-                        div(class="has-text-centered")
-                            a(class="has-text-grey-dark is-size-7", href="#")
-                                svg(xmlns="http://www.w3.org/2000/svg", class="has-text-grey-dark mb-2", width="9", height="12", viewbox="0 0 9 12", fill="none")
-                                    path(d="M5 10.2929L8.14645 7.14645C8.34171 6.95118 8.65829 6.95118 8.85355 7.14645C9.04882 7.34171 9.04882 7.65829 8.85355 7.85355L4.85355 11.8536C4.65829 12.0488 4.34171 12.0488 4.14645 11.8536L0.146447 7.85355C-0.0488155 7.65829 -0.0488155 7.34171 0.146447 7.14645C0.341709 6.95118 0.658291 6.95118 0.853553 7.14645L4 10.2929V0.5C4 0.223858 4.22386 0 4.5 0C4.77614 0 5 0.223858 5 0.5V10.2929Z", fill="currentColor")
-                                span(class="has-text-grey-dark is-block") Scroll to see benefits
+                                img(class="image is-fullwidth", src="images/screens-responsive.png", alt="")
                 div(class="is-hidden navbar-side is-fixed is-top-0 is-bottom-0 is-left-0 has-mw-sm", style="width: 75%; z-index: 9999;")
                     div(class="navbar-backdrop is-fixed is-inset-0 has-background-primary", style="opacity: 90%;")
                     nav(class="navbar is-light is-relative is-flex is-flex-direction-column px-6 py-6 has-background-white", style="width: 100%; height: 100%; overflow-y: auto")
-                        div(class="mb-10 navbar-brand")
-                            a(class="navbar-item mr-auto title is-size-4 pl-0", href="#")
-                                img(src="images/logo-qwc.svg", alt="", width="100")
-                            button(class="navbar-close button is-text p-0 mb-2", type="button", aria-label="Close")
-                                svg(xmlns="http://www.w3.org/2000/svg", style="width: 18px; height: 18px;", fill="none", viewbox="0 0 24 24", stroke="currentColor")
-                                    path(stroke-linecap="round", stroke-linejoin="round", stroke-width="2", d="M6 18L18 6M6 6l12 12")
+                        include includes/hamburger-logo.pug
                         div
                             div(class="is-flex-direction-column")
-                                a(class="navbar-item mb-4", href="#") About
-                                |                 
-                                a(class="navbar-item mb-4", href="#") Company
-                                |                 
-                                a(class="navbar-item mb-4", href="#") Services
-                                |                 
-                                a(class="navbar-item mb-4", href="#") Testimonials
-                        div(class="mt-auto")
-                            div(class="py-6")
-                                a(class="button is-primary is-fullwidth", href="#") Contact Us
-                            p(class="is-size-7 mb-4 has-text-centered") © 2026 All rights reserved.
+                                include includes/menu.pug
             section(class="section")
                 div(class="container")
                     div(class="columns is-multiline")
@@ -182,33 +144,4 @@ html(lang="en")
                                         h6(class="mb-3 has-text-weight-bold is-size-4") List of regular users
                                         p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
             section(class="section")
-                div(class="container")
-                    div(class="has-mw-xl mx-auto")
-                        div(class="pb-10 has-text-centered")
-                            a(class="navbar-item pl-0 mb-10 is-inline-block title is-size-4", href="#")
-                                img(src="cronos-assets/logos/cronos-logo.svg", alt="", width="132")
-                            ul(class="mb-10 is-flex is-justify-content-center")
-                                li(class="mb-5 mb-0-desktop mr-6 mr-12-desktop")
-                                    a(class="is-size-6 has-text-grey-dark has-text-weight-bold", href="#") About
-                                li(class="mb-5 mb-0-desktop mr-6 mr-12-desktop")
-                                    a(class="is-size-6 has-text-grey-dark has-text-weight-bold", href="#") Company
-                                li(class="mb-5 mb-0-desktop mr-6 mr-12-desktop")
-                                    a(class="is-size-6 has-text-grey-dark has-text-weight-bold", href="#") Services
-                                li
-                                    a(class="is-size-6 has-text-grey-dark has-text-weight-bold", href="#") Testimonials
-                            div(class="is-flex is-justify-content-center is-align-items-center")
-                                a(class="mr-10", href="#")
-                                    img(src="cronos-assets/logos/brands/facebook.svg", alt="")
-                                |                 
-                                a(class="mr-10", href="#")
-                                    img(src="cronos-assets/logos/brands/twitter.svg", alt="")
-                                |                 
-                                a(class="mr-10", href="#")
-                                    img(src="cronos-assets/logos/brands/Instagram.svg", alt="")
-                                |                 
-                                a(class="mr-10", href="#")
-                                    img(src="cronos-assets/logos/brands/github.svg", alt="")
-                                |                 
-                                a(href="#")
-                                    img(src="cronos-assets/logos/brands/LinkedIn.svg", alt="")
-                        p(class="has-text-grey-dark is-size-7 pt-10 has-text-centered") All rights reserved © Cronos 2026
+                include includes/footer.pug
