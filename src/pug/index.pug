@@ -5,26 +5,51 @@ html(lang="en")
         include includes/head.pug
     body
         div(class="")
-            section(class="has-background-light")
-                nav(class="navbar has-background-light py-5 is-relative")
-                    div(class="container is-fluid")
-                        include includes/navbar-logo.pug
-                        div(class="navbar-menu")
-                            div(class="navbar-end")
-                                include includes/menu.pug
-                div(class="section pt-0")
-                    div(class="container mt-8")
-                        div(class="mb-12 is-vcentered columns is-multiline")
-                            div(class="column is-12 is-6-desktop mb-20 mb-0-desktop")
-                                div(class="has-mw-md-desktop")
-                                    h2(class="title is-size-2 is-spaced has-text-primary mb-5") QGIS Webclient
-                                    p(class="subtitle mb-6") Build a well-presented brand that everyone will love. Take care to develop resources continually and integrity them with previous projects.
-                                    div(class="buttons")
-                                        a(class="button is-primary", href="#") Track your performance
-                                        |
-                                        a(class="button is-dark", href="#") Learn More
-                            div(class="column is-12 is-6-desktop")
-                                img(class="image is-fullwidth", src="images/screens-responsive.png", alt="")
+            nav(class="navbar site-navbar has-background-transparent py-5 is-relative")
+                div(class="container is-fluid")
+                    include includes/navbar-logo.pug
+                    div(class="navbar-menu")
+                        div(class="navbar-end")
+                            include includes/menu.pug
+
+            section(class="hero-qwc")
+                div(class="hero-glow-top")
+                div(class="hero-glow-bottom")
+
+                div(class="section hero-qwc-section pt-0")
+                    div(class="container hero-qwc-container")
+                        div(class="hero-qwc-columns is-vcentered columns is-multiline is-variable is-8")
+                            div(class="column is-12 is-7-desktop mb-20 mb-0-desktop")
+                                div(class="hero-copy has-mw-md-desktop")
+                                    h1(class="title hero-title mb-5")
+                                        | QGIS Web Client
+
+                                    p(class="subtitle hero-subtitle mb-5")
+                                        | Modern Web GIS, built on QGIS
+
+                                    div(class="hero-pill-group mb-6")
+                                        span(class="hero-pill") Open source
+                                        span(class="hero-pill") QGIS-native
+                                        span(class="hero-pill") Production-ready
+
+                                    div(class="buttons hero-buttons")
+                                        a(class="button is-primary is-medium is-rounded hero-button-primary", href="features.html") Explore Features
+                                        a(class="button is-light is-medium is-rounded hero-button-secondary", href="https://qwc-services.github.io/") Documentation
+
+                            div(class="column is-12 is-5-desktop")
+                                div(class="hero-visual-wrap")
+                                    div(class="hero-shadow")
+                                    div(class="hero-card")
+                                        div(class="hero-card-topbar")
+                                            div(class="hero-card-dots")
+                                                span
+                                                span
+                                                span
+                                            div(class="hero-card-label") QWC Map Viewer
+
+                                        div(class="hero-image-wrap")
+                                            img(class="image is-fullwidth", src="images/screens-responsive.png", alt="QWC web map interface")
+
                 div(class="is-hidden navbar-side is-fixed is-top-0 is-bottom-0 is-left-0 has-mw-sm", style="width: 75%; z-index: 9999;")
                     div(class="navbar-backdrop is-fixed is-inset-0 has-background-primary", style="opacity: 90%;")
                     nav(class="navbar is-light is-relative is-flex is-flex-direction-column px-6 py-6 has-background-white", style="width: 100%; height: 100%; overflow-y: auto")
@@ -32,15 +57,18 @@ html(lang="en")
                         div
                             div(class="is-flex-direction-column")
                                 include includes/menu.pug
+
             section(class="section")
                 div(class="container")
-                    div(class="columns is-multiline")
-                        div(class="column is-12 is-6-desktop mb-10 mb-0-desktop")
+                    div(class="columns is-multiline is-variable is-6")
+                        div(class="column is-12 is-5-desktop mb-10 mb-0-desktop")
                             div(class="has-mw-md-desktop")
-                                span(class="tag is-warning") Lorem ipsum
-                                h3(class="my-6 title is-size-3 is-spaced") Lorem ipsum dolor sit amet consectutar domor at elis
-                                p(class="has-mw-sm-desktop subtitle") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan aliquet orci.
-                        div(class="column is-12 is-6-desktop")
+                                span(class="tag is-warning") Why QWC
+                                h3(class="my-6 title is-size-3 is-spaced") Built for modern web GIS
+                                p(class="has-mw-sm-desktop subtitle")
+                                    | QWC is an open source web GIS platform built on the QGIS ecosystem, combining usability, extensibility and modern web technologies.
+
+                        div(class="column is-12 is-7-desktop")
                             div(class="columns is-multiline")
                                 div(class="column is-12 is-6-desktop mb-10")
                                     span
@@ -48,100 +76,580 @@ html(lang="en")
                                             path(d="M14 40H40", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M8 40V34L34 8L40 14L14 40H8Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M34 20L28 14", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    h6(class="mt-8 mb-4 is-size-4") Change of access
-                                    p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
+                                    h6(class="mt-8 mb-4 is-size-4") Official QGIS Project
+                                    p(class="subtitle") Part of the QGIS ecosystem, ensuring compatibility, stability and long-term relevance.
+
                                 div(class="column is-12 is-6-desktop mb-10")
                                     span
                                         svg(xmlns="http://www.w3.org/2000/svg", width="48", height="48", viewbox="0 0 48 48", fill="none")
                                             path(d="M8 14L24 6L40 14V34L24 42L8 34V14Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M30 18L18 30", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M18 18L30 30", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    h6(class="mt-8 mb-4 is-size-4") No errors
-                                    p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
+                                    h6(class="mt-8 mb-4 is-size-4") Modern Responsive UI
+                                    p(class="subtitle") A clean and responsive interface designed for desktop and mobile use.
+
                                 div(class="column is-12 is-6-desktop mb-10 mb-0-desktop")
                                     span
                                         svg(xmlns="http://www.w3.org/2000/svg", width="48", height="48", viewbox="0 0 48 48", fill="none")
                                             path(d="M24 44C24 44 40 36 40 24V10L24 4L8 10V24C8 36 24 44 24 44Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M16 23L22 29L34 17", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    h6(class="mt-8 mb-4 is-size-4") Security in savings
-                                    p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
+                                    h6(class="mt-8 mb-4 is-size-4") Focus on Usability
+                                    p(class="subtitle") Built with clarity and intuitive workflows in mind.
+
                                 div(class="column is-12 is-6-desktop")
                                     span
                                         svg(xmlns="http://www.w3.org/2000/svg", width="48", height="48", viewbox="0 0 48 48", fill="none")
                                             path(d="M24 30C27.866 30 31 26.866 31 23C31 19.134 27.866 16 24 16C20.134 16 17 19.134 17 23C17 26.866 20.134 30 24 30Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M42 23.9999C42.006 28.6858 40.1784 33.1881 36.908 36.5439C35.2324 38.2727 33.2261 39.6466 31.0086 40.5839C28.791 41.5213 26.4075 42.0028 24 41.9999C21.5925 42.0028 19.209 41.5213 16.9914 40.5839C14.7739 39.6466 12.7676 38.2727 11.092 36.5439C9.03644 34.4289 7.53208 31.8412 6.71122 29.0085C5.89036 26.1757 5.77815 23.1846 6.38447 20.2982C6.99079 17.4119 8.29705 14.7188 10.1884 12.4557C12.0797 10.1927 14.4981 8.42905 17.2309 7.31994C19.9638 6.21082 22.9273 5.79021 25.8608 6.0951C28.7943 6.39999 31.608 7.42105 34.0543 9.06846C36.5006 10.7159 38.5047 12.9392 39.8902 15.5428C41.2757 18.1464 42.0002 21.0506 42 23.9999V23.9999Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M11.092 36.544C12.5768 34.5144 14.5197 32.8639 16.7626 31.7268C19.0056 30.5897 21.4853 29.9981 24 30C26.5147 29.9981 28.9944 30.5897 31.2374 31.7268C33.4803 32.8639 35.4232 34.5144 36.908 36.544", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    h6(class="mt-8 mb-4 is-size-4") List of regular users
-                                    p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
+                                    h6(class="mt-8 mb-4 is-size-4") Plugin Architecture
+                                    p(class="subtitle") Easy to adapt and extend through a modular plugin system.
+
             section(class="section")
                 div(class="container")
-                    div(class="is-vcentered columns is-multiline")
-                        div(class="column is-12 is-5-desktop mb-10 mb-0-desktop")
-                            div(class="has-mw-md-desktop")
-                                h3(class="mb-14 title is-size-3 is-spaced") Lorem ipsum dolor sit amet consectutar domor at elis
-                                div(class="mb-6 is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") Check of access
-                                        p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
-                                div(class="mb-6 is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") Security in savings
-                                        p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
-                                div(class="is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") List of regular users
-                                        p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
-                        div(class="column is-12 is-7-desktop")
-                            div(class="has-mw-md-desktop ml-auto-desktop is-relative")
-                                img(class="is-absolute is-block-widescreen is-hidden-touch is-bottom-0 is-left-0", style="width: 160px; height: 160px; margin-left: -80px; z-index: 1;", src="cronos-assets/elements/light-squares.svg", alt="")
-                                img(class="ml-20 is-absolute is-block-widescreen is-hidden-touch is-top-0 is-right-0", style="width: 160px; height: 160px; margin-right: -80px; z-index: 1;", src="cronos-assets/elements/warning-group-square.svg", alt="")
-                                img(class="image is-fullwidth is-cover", style="height: 100%", src="https://images.unsplash.com/photo-1478860409698-8707f313ee8b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzIzMzB8MHwxfHNlYXJjaHwzfHxtYXB8ZW58MHx8fHwxNzczNDg3ODIyfDA&ixlib=rb-4.1.0&q=85&w=1920", alt="")
-            section(class="section")
-                div(class="container")
-                    div(class="is-vcentered columns is-multiline")
+                    div(class="is-vcentered columns is-multiline is-variable is-6")
                         div(class="column is-12 is-7-desktop mb-10 mb-0-desktop")
                             div(class="has-mw-md-desktop is-relative")
                                 img(class="is-absolute is-block-widescreen is-hidden-touch is-bottom-0 is-left-0", style="width: 160px; height: 160px; margin-left: -80px; z-index: 1;", src="cronos-assets/elements/light-squares.svg", alt="")
                                 img(class="ml-20 is-absolute is-block-widescreen is-hidden-touch is-top-0 is-right-0", style="width: 160px; height: 160px; margin-right: -80px; z-index: 1;", src="cronos-assets/elements/warning-group-square.svg", alt="")
-                                img(class="image is-fullwidth is-cover", style="height: 100%", src="https://images.unsplash.com/photo-1717700299581-c2fc3fad4ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzIzMzB8MHwxfHNlYXJjaHwyNHx8bWFwcGluZ3xlbnwwfHx8fDE3NzM0ODc5Njd8MA&ixlib=rb-4.1.0&q=85&w=1920", alt="")
+                                img(class="image is-fullwidth is-cover", style="height: 100%", src="images/screens-responsive.png", alt="QWC interface screenshot")
+
                         div(class="column is-12 is-5-desktop")
                             div(class="has-mw-md-desktop mx-auto")
-                                h3(class="mb-14 title is-size-3 is-spaced") Lorem ipsum dolor sit amet consectutar domor at elis
+                                h3(class="mb-14 title is-size-3 is-spaced") Built to evolve
+                                div(class="mb-6 is-flex is-align-items-start")
+                                    span(class="mr-4")
+                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
+                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 3 12 3Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                                    div
+                                        h6(class="mb-3 has-text-weight-bold is-size-4") First introduced in Switzerland
+                                        p(class="subtitle") QWC1 was introduced in Uster in 2009 as an early web GIS solution built around QGIS.
+
                                 div(class="mb-6 is-flex is-align-items-start")
                                     span(class="mr-4")
                                         svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
                                             path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                     div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") Check of access
-                                        p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
-                                div(class="mb-6 is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") Security in savings
-                                        p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
+                                        h6(class="mb-3 has-text-weight-bold is-size-4") Modern generation since 2016
+                                        p(class="subtitle") QWC2 introduced a modern, responsive interface and a more extensible architecture.
+
                                 div(class="is-flex is-align-items-start")
                                     span(class="mr-4")
                                         svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
                                             path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                     div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") List of regular users
-                                        p(class="subtitle") Take care to develop resources continually and integrity them with previous projects.
+                                        h6(class="mb-3 has-text-weight-bold is-size-4") Continuously improved
+                                        p(class="subtitle") QWC continues to evolve through open source collaboration and professional maintenance.
+
+            section(class="section trust-section")
+                div(class="container")
+                    div(class="trust-shell")
+                        // TITLE + INTRO
+                        div(class="trust-intro has-text-centered")
+                            h3(class="title trust-title mb-4") A trusted open source platform
+                            p(class="subtitle trust-subtitle")
+                                | QWC is built on top of the QGIS ecosystem and combines years of open source development with modern web technologies and professional expertise.
+
+                        // FEATURES GRID
+                        div(class="columns is-multiline is-variable is-6 trust-grid")
+
+                            div(class="column is-12 is-4-desktop")
+                                div(class="trust-feature")
+                                    h6(class="trust-feature-title") Official QGIS ecosystem
+                                    p(class="trust-feature-copy") Developed within QGIS, ensuring long-term compatibility and stability.
+
+                            div(class="column is-12 is-4-desktop")
+                                div(class="trust-feature")
+                                    h6(class="trust-feature-title") Proven track record
+                                    p(class="trust-feature-copy") First introduced in Switzerland in 2009, continuously evolving since then.
+
+                            div(class="column is-12 is-4-desktop")
+                                div(class="trust-feature")
+                                    h6(class="trust-feature-title") Modern technologies
+                                    p(class="trust-feature-copy") Built with ReactJS and OpenLayers for performance and flexibility.
+
+                            div(class="column is-12 is-4-desktop")
+                                div(class="trust-feature")
+                                    h6(class="trust-feature-title") Designed for usability
+                                    p(class="trust-feature-copy") A clean and responsive interface focused on real workflows.
+
+                            div(class="column is-12 is-4-desktop")
+                                div(class="trust-feature")
+                                    h6(class="trust-feature-title") Extensible architecture
+                                    p(class="trust-feature-copy") Plugin-based system for easy customization and extension.
+
+                            div(class="column is-12 is-4-desktop")
+                                div(class="trust-feature")
+                                    h6(class="trust-feature-title") Open source
+                                    p(class="trust-feature-copy") Developed openly with contributions from an international community.
+
+                        // PARTNERS LOGOS
+                        div(class="trust-partners")
+
+                            div(class="has-text-centered trust-partners-head")
+                                p(class="trust-partners-label") Trusted by organizations and partners
+
+                            // 🔹 ROW 1
+                            div(class="is-flex is-justify-content-center is-align-items-center partner-logos-row trust-partner-row")
+                                div(class="partner-logo-wrap", data-partner="Stadt Zürich")
+                                    img(class="partner-logo", src="images/logos/sz.png" alt="Stadt Zürich")
+                                div(class="partner-logo-wrap", data-partner="Stadt Frankfurt")
+                                    img(class="partner-logo", src="images/logos/sfr.png" alt="Stadt Frankfurt")
+                                div(class="partner-logo-wrap", data-partner="Berliner Verkehrsbetriebe")
+                                    img(class="partner-logo", src="images/logos/bvb.svg" alt="Berliner Verkehrsbetriebe")
+                                div(class="partner-logo-wrap", data-partner="Universität Zürich")
+                                    img(class="partner-logo", src="images/logos/uzh.png" alt="Universität Zürich")
+
+                            // 🔹 ROW 2
+                            div(class="is-flex is-justify-content-center is-align-items-center partner-logos-row trust-partner-row trust-partner-row-bottom")
+                                div(class="partner-logo-wrap", data-partner="Canton of Glarus")
+                                    img(class="partner-logo", src="images/logos/gl.png" alt="Canton of Glarus")
+                                div(class="partner-logo-wrap", data-partner="Canton of Solothurn")
+                                    img(class="partner-logo", src="images/logos/so.png" alt="Canton of Solothurn")
+                                div(class="partner-logo-wrap", data-partner="Stadtwerke Lemgo")
+                                    img(class="partner-logo", src="images/logos/lemgo.png" alt="Stadtwerke Lemgo")
+                                div(class="partner-logo-wrap", data-partner="Stadt Wolfsburg")
+                                    img(class="partner-logo", src="images/logos/wolfsburg.jpg" alt="Stadt Wolfsburg")
+                                div(class="partner-logo-wrap", data-partner="Stadt Jena")
+                                    img(class="partner-logo", src="images/logos/jena.svg" alt="Stadt Jena")
+
             section(class="section")
                 include includes/footer.pug
+
+style.
+  .hero-qwc {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 16% 18%, rgba(147, 176, 35, 0.14) 0%, rgba(147, 176, 35, 0) 28%),
+      radial-gradient(circle at 84% 20%, rgba(37, 150, 190, 0.10) 0%, rgba(37, 150, 190, 0) 26%),
+      linear-gradient(135deg, #f5f8f5 0%, #edf4ef 48%, #eef5f7 100%);
+    min-height: 58vh;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .hero-qwc::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 78% 24%, rgba(88, 150, 50, 0.08) 0%, rgba(88, 150, 50, 0) 22%),
+      linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+  }
+
+  .hero-qwc-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-qwc-container {
+    width: min(1560px, calc(100% - 1rem));
+  }
+
+  .hero-qwc-columns {
+    min-height: calc(58vh - 5rem);
+    align-items: center;
+  }
+
+  .hero-qwc-columns > .column:first-child {
+    padding-right: 3rem;
+  }
+
+  .hero-qwc-columns > .column:last-child {
+    padding-left: 2.5rem;
+  }
+
+  .hero-qwc-columns > .column:first-child {
+    position: relative;
+    z-index: 3;
+  }
+
+  .hero-qwc-columns > .column:last-child {
+    position: relative;
+    z-index: 2;
+  }
+
+  .partner-logos-row {
+    flex-wrap: wrap;
+  }
+
+  .partner-logo-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .partner-logo {
+    max-height: 34px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .partner-logo-wrap::after {
+      content: attr(data-partner);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 10px);
+      transform: translateX(-50%) translateY(4px);
+      background: #93b023;
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+      padding: 0.5rem 0.7rem;
+      border-radius: 999px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      box-shadow: 0 10px 22px rgba(147, 176, 35, 0.24);
+    }
+
+    .partner-logo-wrap:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .hero-glow-top {
+    position: absolute;
+    top: -140px;
+    right: -80px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(147,176,35,0.14) 0%, rgba(147,176,35,0) 70%);
+    pointer-events: none;
+  }
+
+  .hero-glow-bottom {
+    position: absolute;
+    bottom: -180px;
+    left: -100px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(37,150,190,0.10) 0%, rgba(37,150,190,0) 72%);
+    pointer-events: none;
+  }
+
+  .hero-copy {
+    max-width: 48rem;
+    padding-top: 0.25rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 4.4vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    color: #132321;
+    white-space: nowrap;
+    margin-bottom: 1.15rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.24rem;
+    line-height: 1.48;
+    color: #55706a;
+    max-width: 38rem;
+    margin-bottom: 1.35rem !important;
+  }
+
+  .hero-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.9rem;
+    padding: 0.28rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid rgba(19, 35, 33, 0.10);
+    background: rgba(255,255,255,0.48);
+    color: #5d726e;
+    font-size: 0.78rem;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+  }
+
+  .hero-buttons {
+    gap: 0.9rem;
+    margin-bottom: 0 !important;
+  }
+
+  .hero-button-primary,
+  .hero-button-secondary {
+    min-height: 3.35rem;
+    border-radius: 15px;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-weight: 700;
+    box-shadow: 0 12px 26px rgba(19,35,33,0.08);
+  }
+
+  .hero-button-primary {
+    background: #589632;
+    border-color: #589632;
+  }
+
+  .hero-button-primary:hover {
+    background: #4f872d;
+    border-color: #4f872d;
+  }
+
+  .hero-button-secondary {
+    border: 1px solid #dbe5e1;
+    background: rgba(255,255,255,0.86);
+    color: #17302c;
+  }
+
+  .hero-visual-wrap {
+    position: relative;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .hero-shadow {
+    position: absolute;
+    inset: auto 14% -18px 14%;
+    height: 34px;
+    background: rgba(8,28,24,0.16);
+    filter: blur(24px);
+    border-radius: 999px;
+  }
+
+  .hero-card {
+    position: relative;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(215,225,221,0.9);
+    border-radius: 28px;
+    padding: 0.9rem;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+  }
+
+  .hero-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.55rem;
+    padding: 0.2rem 0.35rem 0 0.35rem;
+  }
+
+  .hero-card-dots {
+    display: flex;
+    gap: 0.45rem;
+  }
+
+  .hero-card-dots span:nth-child(1),
+  .hero-card-dots span:nth-child(2),
+  .hero-card-dots span:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .hero-card-dots span:nth-child(1) { background: #ff6b6b; }
+  .hero-card-dots span:nth-child(2) { background: #ffd166; }
+  .hero-card-dots span:nth-child(3) { background: #06d6a0; }
+
+  .hero-card-label {
+    font-size: 0.8rem;
+    color: #617472;
+    font-weight: 600;
+  }
+
+  .hero-image-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #dfe8e4;
+    box-shadow: inset 0 0 0 1px rgba(19,35,33,0.05);
+  }
+
+  .trust-section {
+    padding-top: 5.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .trust-shell {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .trust-intro {
+    max-width: 760px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .trust-title {
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem !important;
+  }
+
+  .trust-subtitle {
+    color: #5f7170;
+    line-height: 1.75;
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+
+  .trust-grid {
+    margin-top: 0.5rem !important;
+    row-gap: 1.25rem;
+  }
+
+  .trust-feature {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .trust-feature-title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #10211f;
+    margin-bottom: 0.85rem;
+  }
+
+  .trust-feature-copy {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #5c6d6b;
+    margin: 0;
+  }
+
+  .trust-partners {
+    margin-top: 3.25rem;
+    padding-top: 1.75rem;
+  }
+
+  .trust-partners-head {
+    margin-bottom: 1.5rem;
+  }
+
+  .trust-partners-label {
+    font-size: 1rem;
+    color: #71807f;
+    margin: 0;
+  }
+
+  .trust-partner-row {
+    gap: 3.25rem;
+    opacity: 0.82;
+  }
+
+  .trust-partner-row-bottom {
+    margin-top: 2rem !important;
+  }
+
+  @media screen and (max-width: 1023px) {
+    .hero-qwc-columns > .column:first-child,
+    .hero-qwc-columns > .column:last-child {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .hero-title {
+      white-space: normal;
+    }
+
+    .hero-visual-wrap {
+      max-width: 520px;
+      padding-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero-qwc {
+      min-height: auto;
+    }
+
+    .hero-qwc-section {
+      padding-top: 1.5rem;
+      padding-bottom: 2.25rem;
+    }
+
+    .hero-qwc-container {
+      width: min(100%, calc(100% - 1.5rem));
+    }
+
+    .hero-qwc-columns {
+      min-height: auto;
+    }
+
+    .hero-copy {
+      max-width: none;
+      padding-top: 0;
+    }
+
+    .hero-pill-group {
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: 2.9rem;
+      line-height: 0.98;
+      white-space: normal;
+    }
+
+    .hero-subtitle {
+      max-width: none;
+    }
+
+    .hero-visual-wrap {
+      max-width: none;
+      margin-top: 1.5rem;
+      padding-left: 0;
+    }
+
+    .trust-section {
+      padding-top: 4rem;
+      padding-bottom: 3.25rem;
+    }
+
+    .trust-intro {
+      margin-bottom: 2rem;
+    }
+
+    .trust-feature {
+      padding: 0.25rem 0;
+    }
+
+    .trust-feature-title {
+      font-size: 1.3rem;
+    }
+
+    .trust-feature-copy {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .trust-partners {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+    }
+
+    .trust-partner-row {
+      gap: 2rem;
+    }
+
+    .trust-partner-row-bottom {
+      margin-top: 1.5rem !important;
+    }
+  }
