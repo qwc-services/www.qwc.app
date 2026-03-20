@@ -6,4 +6,273 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Poppins:wg
 link(rel="stylesheet", href="css/bulma/bulma.min.css")
 link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
 link(rel="icon", type="image/vnd.microsoft.icon", href="images/favicon.ico")
+style.
+    :root {
+        --qwc-orange: #ee7913;
+        --qwc-green: #589632;
+        --qwc-lime: #93b023;
+    }
+    html {
+        scrollbar-color: var(--qwc-orange) #f3efe8;
+        scrollbar-width: thin;
+    }
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f3efe8;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--qwc-orange);
+        border-radius: 999px;
+        border: 2px solid #f3efe8;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #d86d11;
+    }
+    .site-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    .page-with-fixed-navbar {
+        padding-top: 6.25rem;
+    }
+    .page-with-fixed-navbar .site-navbar.has-background-white {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+    .site-navbar.has-background-white {
+        background-color: rgba(255, 255, 255, 0.94) !important;
+        box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+    }
+    .site-navbar.has-background-transparent {
+        background-color: rgba(249, 248, 246, 0.9) !important;
+        box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+    }
+    .site-navbar .navbar-end {
+        align-items: center;
+        gap: 0.15rem;
+    }
+    .navbar-brand {
+        min-width: 0;
+    }
+    .navbar-brand-link {
+        min-width: 0;
+        max-width: none;
+        overflow: hidden;
+    }
+    .navbar-brand-logo {
+        flex: 0 0 auto;
+    }
+    .navbar-brand-title {
+        display: block;
+        min-width: 0;
+        white-space: nowrap;
+    }
+    .site-navbar .navbar-item,
+    .site-navbar .navbar-link {
+        color: #1f2937;
+        font-weight: 600;
+        border-radius: 0.8rem;
+    }
+    .site-navbar .navbar-item:hover,
+    .site-navbar .navbar-link:hover,
+    .site-navbar .navbar-item.has-dropdown:hover > .navbar-link {
+        color: var(--qwc-green);
+        background: transparent;
+    }
+    .site-navbar .navbar-link:not(.is-arrowless)::after {
+        border-color: var(--qwc-lime);
+        margin-top: -0.35em;
+    }
+    .site-navbar .navbar-item.has-dropdown {
+        position: relative;
+    }
+    .site-navbar .navbar-dropdown {
+        border: 0;
+        border-radius: 0;
+        border-top: none;
+        min-width: 16rem;
+        padding: 0.65rem 0;
+        margin-top: 0;
+        top: calc(100% - 2px);
+        background: #ffffff;
+        box-shadow: 0 20px 40px rgba(17, 24, 39, 0.12);
+    }
+    .site-navbar .navbar-item.has-dropdown:hover .navbar-dropdown {
+        display: block;
+    }
+    .site-navbar .navbar-dropdown .navbar-item {
+        padding: 0.85rem 1.5rem;
+        color: #111827;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    .site-navbar .navbar-dropdown .navbar-item:hover {
+        background: #ffffff;
+        color: var(--qwc-green);
+    }
+    .site-navbar .navbar-dropdown .navbar-item[href^="http"]::after {
+        content: "↗";
+        margin-left: 0.5rem;
+        font-size: 0.8em;
+        color: #9ca3af;
+    }
+    @media (max-width: 1023px) {
+        body,
+        .page-with-fixed-navbar {
+            padding-top: 4.35rem;
+        }
+        .site-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1004;
+        }
+        .site-navbar.is-relative {
+            position: fixed !important;
+        }
+        .site-navbar.has-background-transparent,
+        .site-navbar.has-background-white {
+            background-color: rgba(255, 255, 255, 0.96) !important;
+            box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+        }
+        .site-navbar {
+            padding-top: 0.6rem !important;
+            padding-bottom: 0.6rem !important;
+        }
+        .site-navbar .container.is-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            min-height: 3.6rem;
+            display: flex;
+            align-items: center;
+        }
+        .site-navbar .navbar-menu {
+            display: none !important;
+        }
+        .navbar-brand-link {
+            gap: 0.6rem !important;
+            max-width: calc(100% - 3rem);
+        }
+        .navbar-brand-logo {
+            width: 110px;
+        }
+        .navbar-brand-title {
+            font-size: 0.92rem !important;
+            line-height: 1.05 !important;
+            white-space: normal;
+        }
+        .site-navbar .navbar-brand .navbar-item {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        .navbar-menu-open,
+        .navbar-close {
+            color: #111827 !important;
+        }
+        .navbar-close {
+            min-width: 2.75rem;
+            min-height: 2.75rem;
+            margin-bottom: 0 !important;
+            border-radius: 0.85rem;
+        }
+        .navbar-close svg {
+            width: 28px !important;
+            height: 28px !important;
+            stroke-width: 2.2;
+        }
+        .navbar-side {
+            inset: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            z-index: 1006 !important;
+        }
+        .navbar-side .navbar-backdrop {
+            background: rgba(244, 246, 243, 0.42) !important;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .navbar-side > .navbar {
+            width: calc(100% - 1rem) !important;
+            max-width: none !important;
+            height: auto !important;
+            max-height: calc(100vh - 1rem);
+            margin: 0.5rem;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            overflow-y: auto;
+            box-shadow: 0 24px 48px rgba(17, 24, 39, 0.18);
+            border: 1px solid rgba(223, 228, 221, 0.95);
+        }
+        .navbar-side .mb-10.is-flex.is-align-items-center {
+            margin-bottom: 0 !important;
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #eceee9;
+        }
+        .navbar-side .is-flex-direction-column {
+            padding: 0.7rem 0 1.2rem 0;
+        }
+        .navbar-side .navbar-item,
+        .navbar-side .navbar-link {
+            padding: 0.95rem 1.5rem !important;
+            color: #111827 !important;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .navbar-side .navbar-item.has-dropdown {
+            display: block;
+        }
+        .navbar-side .navbar-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-side .navbar-link:not(.is-arrowless)::after {
+            border-width: 2px;
+            margin-top: -0.15em;
+            transform: rotate(45deg) scale(0.95);
+        }
+        .navbar-side .navbar-dropdown {
+            display: block !important;
+            min-width: 0;
+            margin-top: 0;
+            padding: 0 0 0.6rem 1.2rem;
+            background: transparent;
+            box-shadow: none;
+        }
+        .navbar-side .navbar-dropdown .navbar-item {
+            padding: 0.55rem 1.25rem !important;
+            color: #5f6d6b !important;
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+        .navbar-side .navbar-dropdown .navbar-item:hover {
+            color: var(--qwc-green) !important;
+            background: transparent !important;
+        }
+        .navbar-side > .navbar > div:last-child > .is-flex-direction-column > a.navbar-item[href*="qwc-services.github.io"] {
+            margin: 0.7rem 1.5rem 0 1.5rem;
+            padding: 0.95rem 1.1rem !important;
+            border-radius: 0.95rem !important;
+            background: linear-gradient(135deg, #f2f5f2, #edf1ee);
+            font-weight: 800;
+            box-shadow: inset 0 0 0 1px rgba(213, 219, 214, 0.9);
+        }
+    }
 script(src="js/main.js")

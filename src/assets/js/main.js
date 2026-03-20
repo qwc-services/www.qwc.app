@@ -1,7 +1,7 @@
 // Burger menus
 document.addEventListener('DOMContentLoaded', function() {
     // open
-    const burger = document.querySelectorAll('.navbar-menu-open');
+    const burger = document.querySelectorAll('.navbar-menu-open, .mobile-bottom-menu-open');
     const menu = document.querySelectorAll('.navbar-side');
 
     if (burger.length && menu.length) {

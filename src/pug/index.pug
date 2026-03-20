@@ -218,7 +218,6 @@ html(lang="en")
 
             section(class="section")
                 include includes/footer.pug
-
 style.
   .hero-qwc {
     position: relative;
@@ -557,14 +556,36 @@ style.
     margin-top: 2rem !important;
   }
 
+  @media screen and (min-width: 1024px) {
+    .hero-copy {
+      max-width: 52rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3.2rem, 4vw, 4.7rem);
+      line-height: 0.94;
+      white-space: nowrap;
+    }
+  }
+
   @media screen and (max-width: 1023px) {
+    .hero-qwc-section {
+      padding-top: 4.25rem !important;
+    }
+
     .hero-qwc-columns > .column:first-child,
     .hero-qwc-columns > .column:last-child {
       padding-left: 0.75rem;
       padding-right: 0.75rem;
     }
 
+    .hero-copy {
+      padding-top: 1.75rem !important;
+    }
+
     .hero-title {
+      font-size: 2.9rem;
+      line-height: 0.95;
       white-space: normal;
     }
 
@@ -581,7 +602,7 @@ style.
     }
 
     .hero-qwc-section {
-      padding-top: 1.5rem;
+      padding-top: 4.75rem !important;
       padding-bottom: 2.25rem;
     }
 
@@ -595,7 +616,7 @@ style.
 
     .hero-copy {
       max-width: none;
-      padding-top: 0;
+      padding-top: 2.1rem !important;
     }
 
     .hero-pill-group {
@@ -603,8 +624,8 @@ style.
     }
 
     .hero-title {
-      font-size: 2.9rem;
-      line-height: 0.98;
+      font-size: 2.2rem;
+      line-height: 0.96;
       white-space: normal;
     }
 
