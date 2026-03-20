@@ -1,8 +1,25 @@
+mixin feature-left(img, alt, title, text)
+    div(class="column is-4-desktop is-6-tablet is-12-mobile")
+        div(class="capability-card")
+            div(class="capability-card-image")
+                img(src=img, alt=alt, width="900", height="560")
+            div(class="capability-card-body")
+                h4(class="capability-card-title")= title
+                p(class="capability-card-text")= text
+                if block
+                    block
+
+mixin card-labels(labels)
+    div(class="capability-card-labels")
+        each label in labels
+            span(class="capability-card-label")= label
+
 doctype html
 html(lang="en")
     head
         title QWC - Features
         include includes/head.pug
+
     body(class="page-with-fixed-navbar")
         div(class="")
             nav(class="navbar site-navbar has-background-white py-5")
@@ -86,241 +103,74 @@ html(lang="en")
                                         h3(class="capability-title") Core Map Experience
                                         p(class="capability-desc") Core map workflows combine project themes, layer control, search, feature inspection, and temporal navigation in one consistent viewer experience.
                                     div(class="columns is-multiline is-variable is-5")
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-übersicht-1.png", alt="Responsive interface on multiple devices", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Theme Management
-                                                    p(class="capability-card-text") Switch between QGIS projects and support multiple project contexts within the same client setup.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Theme switcher
-                                                        span(class="capability-card-label") Multiple projects
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-übersicht-1.png", alt="Layer tree and project structure", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Layer Tree
-                                                    p(class="capability-card-text") Browse layers in a hierarchical tree, control visibility, and manage ordering within the map.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Hierarchical tree
-                                                        span(class="capability-card-label") Toggle visibility
-                                                        span(class="capability-card-label") Layer ordering
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/dynamische-kartenlegende-1.png", alt="Layer visibility rules", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Layer Visibility Rules
-                                                    p(class="capability-card-text") Control visibility dynamically based on active layers, current extent, and current scale.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Active layers
-                                                        span(class="capability-card-label") Current extent
-                                                        span(class="capability-card-label") Current scale
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/dynamische-kartenlegende-1.png", alt="Dynamic legend display", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Dynamic Legend
-                                                    p(class="capability-card-text") Show an auto-updating legend that adapts to the current map context and visible content.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Auto-updating
-                                                        span(class="capability-card-label") Context-aware
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-1.png", alt="Layer comparison view", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Layer Comparison
-                                                    p(class="capability-card-text") Compare different layers visually within the same interface to understand change and overlap.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Visual comparison
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/schnittstellen-und-datenaustausch-1.png", alt="External layers and standards-based services", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") External Layers
-                                                    p(class="capability-card-text") Import standards-based external layers and display them alongside project data in the viewer.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") WMS
-                                                        span(class="capability-card-label") WFS
-                                                        span(class="capability-card-label") WMTS
-                                                        span(class="capability-card-label") KML
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/datenabfragen-3.png", alt="Temporary and local datasets", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Temporary Data
-                                                    p(class="capability-card-text") Load local datasets for temporary use and visualize them without committing them to a permanent service.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Local datasets
-                                                        span(class="capability-card-label") Temporary view
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/datenabfragen-1.png", alt="Database-driven search", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Database Search
-                                                    p(class="capability-card-text") Run configurable query-based search directly against database-backed content and project-specific logic.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Query-based
-                                                        span(class="capability-card-label") Configurable
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/suche-1.png", alt="Full-text search with Solr", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Full-Text Search (Solr)
-                                                    p(class="capability-card-text") Use indexed full-text search with faceted navigation to discover datasets and records more efficiently.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Faceted search
-                                                        span(class="capability-card-label") Indexed datasets
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/suche-1.png", alt="Trigram search configuration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Trigram Search
-                                                    p(class="capability-card-text") Provide a lighter SQL-based search alternative when full Solr indexing is not required.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Solr alternative
-                                                        span(class="capability-card-label") SQL-based
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/kartenviewer-vbs-swisstopo-1.png", alt="External search APIs and geocoding", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") External Search APIs
-                                                    p(class="capability-card-text") Extend search with external providers such as OSM, Nominatim, Swisstopo, and custom API services.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") OSM / Nominatim
-                                                        span(class="capability-card-label") Swisstopo
-                                                        span(class="capability-card-label") Custom APIs
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/suche-1.png", alt="Search provider configuration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Search Configuration
-                                                    p(class="capability-card-text") Configure providers, search shortcuts, and indexing strategies so discovery fits each deployment.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Configurable providers
-                                                        span(class="capability-card-label") Shortcuts
-                                                        span(class="capability-card-label") DB indexing
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/feature-info-templates-1.png", alt="Feature information panel", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Feature Info
-                                                    p(class="capability-card-text") Inspect selected objects through dedicated info panels with structured attribute access.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Object info
-                                                        span(class="capability-card-label") Attribute inspection
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/datenabfragen-1.png", alt="Attribute table view linked to map", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Attribute Table
-                                                    p(class="capability-card-text") Explore tabular data views that stay connected to the map and support detailed record inspection.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Tabular view
-                                                        span(class="capability-card-label") Linked to map
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/feature-info-templates-1.png", alt="Configurable info templates", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Info Templates
-                                                    p(class="capability-card-text") Present feature information through configurable templates in HTML, JSON, or plain text formats.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") HTML
-                                                        span(class="capability-card-label") JSON
-                                                        span(class="capability-card-label") Plain text
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/feature-info-templates-1.png", alt="Contextual popup information", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Contextual Popups
-                                                    p(class="capability-card-text") Show context-based information through compact popups in a MapInfo-style interaction pattern.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") MapInfo-style
-                                                        span(class="capability-card-label") Context-based
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/feature-info-templates-1.png", alt="Pop-out dialogs for workflows", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Pop-out Dialogs
-                                                    p(class="capability-card-text") Open detached dialogs for extended inspection workflows and domain-specific application views.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Detached dialogs
-                                                        span(class="capability-card-label") Domain apps
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-1.png", alt="Permalinks and shareable map state", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Permalinks
-                                                    p(class="capability-card-text") Generate compact shareable URLs that preserve the current map state and context.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Compact URLs
-                                                        span(class="capability-card-label") Shareable state
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-1.png", alt="Bookmark system for saved views", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Bookmarks
-                                                    p(class="capability-card-text") Save, reopen, and manage stored map views for repeatable navigation and collaboration.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Save views
-                                                        span(class="capability-card-label") Saved states
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-übersicht-1.png", alt="Geolocation in the web client", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Geolocation
-                                                    p(class="capability-card-text") Detect the user position directly in the browser to support field and navigation workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") User position
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/time-manager-1.png", alt="Timeline-based navigation tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Timeline Navigation
-                                                    p(class="capability-card-text") Navigate temporal datasets with a time slider and dedicated tools for moving through time-based content.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Time slider
-                                                        span(class="capability-card-label") Temporal navigation
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/time-manager-1.png", alt="Advanced time handling options", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Advanced Time Handling
-                                                    p(class="capability-card-text") Support fixed, infinite, and non-linear time models for more advanced temporal workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Fixed timeline
-                                                        span(class="capability-card-label") Infinite timeline
-                                                        span(class="capability-card-label") Non-linear time
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/time-manager-1.png", alt="Temporal state visualization", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Temporal Visualization
-                                                    p(class="capability-card-text") Display and compare time-based states to understand change across temporal datasets.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Time-based states
+                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "Responsive interface on multiple devices", "Theme Management", "Switch between QGIS projects and support multiple project contexts within the same client setup.")
+                                            +card-labels(["Theme switcher", "Multiple projects"])
+
+                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "Layer tree and project structure", "Layer Tree", "Browse layers in a hierarchical tree, control visibility, and manage ordering within the map.")
+                                            +card-labels(["Hierarchical tree", "Toggle visibility", "Layer ordering"])
+
+                                        +feature-left("images/features/dynamische-kartenlegende-1.png", "Layer visibility rules", "Layer Visibility Rules", "Control visibility dynamically based on active layers, current extent, and current scale.")
+                                            +card-labels(["Active layers", "Current extent", "Current scale"])
+
+                                        +feature-left("images/features/dynamische-kartenlegende-1.png", "Dynamic legend display", "Dynamic Legend", "Show an auto-updating legend that adapts to the current map context and visible content.")
+                                            +card-labels(["Auto-updating", "Context-aware"])
+
+                                        +feature-left("images/features/qgis-web-client-1.png", "Layer comparison view", "Layer Comparison", "Compare different layers visually within the same interface to understand change and overlap.")
+                                            +card-labels(["Visual comparison"])
+
+                                        +feature-left("images/features/schnittstellen-und-datenaustausch-1.png", "External layers and standards-based services", "External Layers", "Import standards-based external layers and display them alongside project data in the viewer.")
+                                            +card-labels(["WMS", "WFS", "WMTS", "KML"])
+
+                                        +feature-left("images/features/datenabfragen-3.png", "Temporary and local datasets", "Temporary Data", "Load local datasets for temporary use and visualize them without committing them to a permanent service.")
+                                            +card-labels(["Local datasets", "Temporary view"])
+
+                                        +feature-left("images/features/datenabfragen-1.png", "Database-driven search", "Database Search", "Run configurable query-based search directly against database-backed content and project-specific logic.")
+                                            +card-labels(["Query-based", "Configurable"])
+
+                                        +feature-left("images/features/suche-1.png", "Full-text search with Solr", "Full-Text Search (Solr)", "Use indexed full-text search with faceted navigation to discover datasets and records more efficiently.")
+                                            +card-labels(["Faceted search", "Indexed datasets"])
+
+                                        +feature-left("images/features/suche-1.png", "Trigram search configuration", "Trigram Search", "Provide a lighter SQL-based search alternative when full Solr indexing is not required.")
+                                            +card-labels(["Solr alternative", "SQL-based"])
+
+                                        +feature-left("images/features/kartenviewer-vbs-swisstopo-1.png", "External search APIs and geocoding", "External Search APIs", "Extend search with external providers such as OSM, Nominatim, Swisstopo, and custom API services.")
+                                            +card-labels(["OSM / Nominatim", "Swisstopo", "Custom APIs"])
+
+                                        +feature-left("images/features/suche-1.png", "Search provider configuration", "Search Configuration", "Configure providers, search shortcuts, and indexing strategies so discovery fits each deployment.")
+                                            +card-labels(["Configurable providers", "Shortcuts", "DB indexing"])
+
+                                        +feature-left("images/features/feature-info-templates-1.png", "Feature information panel", "Feature Info", "Inspect selected objects through dedicated info panels with structured attribute access.")
+                                            +card-labels(["Object info", "Attribute inspection"])
+
+                                        +feature-left("images/features/datenabfragen-1.png", "Attribute table view linked to map", "Attribute Table", "Explore tabular data views that stay connected to the map and support detailed record inspection.")
+                                            +card-labels(["Tabular view", "Linked to map"])
+
+                                        +feature-left("images/features/feature-info-templates-1.png", "Configurable info templates", "Info Templates", "Present feature information through configurable templates in HTML, JSON, or plain text formats.")
+                                            +card-labels(["HTML", "JSON", "Plain text"])
+
+                                        +feature-left("images/features/feature-info-templates-1.png", "Contextual popup information", "Contextual Popups", "Show context-based information through compact popups in a MapInfo-style interaction pattern.")
+                                            +card-labels(["MapInfo-style", "Context-based"])
+
+                                        +feature-left("images/features/feature-info-templates-1.png", "Pop-out dialogs for workflows", "Pop-out Dialogs", "Open detached dialogs for extended inspection workflows and domain-specific application views.")
+                                            +card-labels(["Detached dialogs", "Domain apps"])
+
+                                        +feature-left("images/features/qgis-web-client-1.png", "Permalinks and shareable map state", "Permalinks", "Generate compact shareable URLs that preserve the current map state and context.")
+                                            +card-labels(["Compact URLs", "Shareable state"])
+
+                                        +feature-left("images/features/qgis-web-client-1.png", "Bookmark system for saved views", "Bookmarks", "Save, reopen, and manage stored map views for repeatable navigation and collaboration.")
+                                            +card-labels(["Save views", "Saved states"])
+
+                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "Geolocation in the web client", "Geolocation", "Detect the user position directly in the browser to support field and navigation workflows.")
+                                            +card-labels(["User position"])
+
+                                        +feature-left("images/features/time-manager-1.png", "Timeline-based navigation tools", "Timeline Navigation", "Navigate temporal datasets with a time slider and dedicated tools for moving through time-based content.")
+                                            +card-labels(["Time slider", "Temporal navigation"])
+
+                                        +feature-left("images/features/time-manager-1.png", "Advanced time handling options", "Advanced Time Handling", "Support fixed, infinite, and non-linear time models for more advanced temporal workflows.")
+                                            +card-labels(["Fixed timeline", "Infinite timeline", "Non-linear time"])
+
+                                        +feature-left("images/features/time-manager-1.png", "Temporal state visualization", "Temporal Visualization", "Display and compare time-based states to understand change across temporal datasets.")
+                                            +card-labels(["Time-based states"])
 
                             section(class="capability-section", id="data-analysis")
                                 div(class="container")
@@ -329,203 +179,65 @@ html(lang="en")
                                         h3(class="capability-title") Data Interaction & Editing
                                         p(class="capability-desc") Capture, adjust, inspect, and export spatial data through browser-based editing tools connected to QWC and PostGIS services.
                                     div(class="columns is-multiline is-variable is-5")
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/mess-und-zeichnungswerkzeuge-1.png", alt="Drawing and redlining tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Drawing Tools
-                                                    p(class="capability-card-text") Support free sketching and redlining directly on top of the map for review and markup workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Free sketching
-                                                        span(class="capability-card-label") Redlining
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/editieren-erweiterte-funktionen-1.png", alt="Advanced geometry tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Advanced Geometries
-                                                    p(class="capability-card-text") Create structured shapes such as rectangles, squares, and ellipses for more precise geometric drafting.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Rectangle
-                                                        span(class="capability-card-label") Square
-                                                        span(class="capability-card-label") Ellipse
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/editieren-erweiterte-funktionen-1.png", alt="Feature editing tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Snapping
-                                                    p(class="capability-card-text") Snap geometries during editing to keep spatial relationships and topology consistent.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Geometry snapping
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/editieren-erweiterte-funktionen-1.png", alt="Geometry transformation tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Geometry Transformations
-                                                    p(class="capability-card-text") Scale, rotate, and transform geometries during editing to refine spatial features precisely.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Scale
-                                                        span(class="capability-card-label") Rotate
-                                                        span(class="capability-card-label") Transform
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/messfunktionen-2.png", alt="Dimensioning and annotations", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Dimensioning
-                                                    p(class="capability-card-text") Add measurement annotations and dimensioning information as part of spatial editing workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Measurement annotations
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/messfunktionen-1.png", alt="Numerical geometry input", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Numerical Input
-                                                    p(class="capability-card-text") Enter precise geometry values directly for controlled and exact feature creation.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Precise input
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/messfunktionen-1.png", alt="Measurement tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Measurement Tools
-                                                    p(class="capability-card-text") Measure distance and area directly in the viewer to support planning and verification tasks.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Distance
-                                                        span(class="capability-card-label") Area
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-1.png", alt="Data editing backend services", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Data Editing Backend
-                                                    p(class="capability-card-text") Use QWC Data Service with PostGIS integration as the backend foundation for editing workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") QWC Data Service
-                                                        span(class="capability-card-label") PostGIS
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/editieren-erweiterte-funktionen-1.png", alt="Attribute forms and editing fields", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Attribute Forms
-                                                    p(class="capability-card-text") Configure editing forms with defaults, filtered value relations, and visibility logic for grouped fields.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Default values
-                                                        span(class="capability-card-label") Value filters
-                                                        span(class="capability-card-label") Group visibility
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/datenabfragen-1.png", alt="Attribute table tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Attribute Table Tools
-                                                    p(class="capability-card-text") Work with CSV export, extent filtering, and map-linked highlighting directly from table views.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") CSV export
-                                                        span(class="capability-card-label") Filter by extent
-                                                        span(class="capability-card-label") Highlight filtered
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/datenabfragen-3.png", alt="Data source filters from QGIS", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Data Source Filters
-                                                    p(class="capability-card-text") Respect QGIS-defined filters so the client reflects project-level dataset constraints.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") QGIS filters
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/objektexport-1.png", alt="Tabular data export formats", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Data Export (Tabular)
-                                                    p(class="capability-card-text") Export tabular data in common formats for downstream analysis and office workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") JSON
-                                                        span(class="capability-card-label") CSV / Excel
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/objektexport-2.png", alt="Spatial data export formats", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Data Export (Spatial)
-                                                    p(class="capability-card-text") Produce spatial exports in engineering and raster-friendly output formats.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") DXF
-                                                        span(class="capability-card-label") Raster
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/objektexport-1.png", alt="Clipboard export of data", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Clipboard Export
-                                                    p(class="capability-card-text") Copy data directly from the interface for lightweight reuse in external tools and documents.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Direct copy
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/plugin-api-1.png", alt="Custom exporters and plugin logic", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Custom Exporters
-                                                    p(class="capability-card-text") Extend export behavior through IdentifyPlugin exporters and project-specific output logic.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") IdentifyPlugin
-                                                        span(class="capability-card-label") Custom logic
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/drucken-export-1.png", alt="Print layouts from QGIS", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Print Layouts
-                                                    p(class="capability-card-text") Use QGIS layouts and template-driven printing for consistent output from the web client.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") QGIS layouts
-                                                        span(class="capability-card-label") Templates
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/drucken-export-1.png", alt="PDF export output", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") PDF Export
-                                                    p(class="capability-card-text") Create high-resolution PDF output for operational and reporting use cases.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") High-resolution
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/drucken-export-1.png", alt="Batch printing workflow", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Batch Printing
-                                                    p(class="capability-card-text") Print map series in batches when workflows require repeated layout production.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Series printing
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/berichte-1.png", alt="Report generation with JasperReports", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Report Generation
-                                                    p(class="capability-card-text") Generate reports with JasperReports and layer-based aggregation for formal output workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") JasperReports
-                                                        span(class="capability-card-label") Aggregation
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/berichte-1.png", alt="Document services integration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Document Services
-                                                    p(class="capability-card-text") Connect reporting workflows through `qwc-document-service` and the reports plugin.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") qwc-document-service
-                                                        span(class="capability-card-label") Reports plugin
+                                        +feature-left("images/features/mess-und-zeichnungswerkzeuge-1.png", "Drawing and redlining tools", "Drawing Tools", "Support free sketching and redlining directly on top of the map for review and markup workflows.")
+                                            +card-labels(["Free sketching", "Redlining"])
+
+                                        +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "Advanced geometry tools", "Advanced Geometries", "Create structured shapes such as rectangles, squares, and ellipses for more precise geometric drafting.")
+                                            +card-labels(["Rectangle", "Square", "Ellipse"])
+
+                                        +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "Feature editing tools", "Snapping", "Snap geometries during editing to keep spatial relationships and topology consistent.")
+                                            +card-labels(["Geometry snapping"])
+
+                                        +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "Geometry transformation tools", "Geometry Transformations", "Scale, rotate, and transform geometries during editing to refine spatial features precisely.")
+                                            +card-labels(["Scale", "Rotate", "Transform"])
+
+                                        +feature-left("images/features/messfunktionen-2.png", "Dimensioning and annotations", "Dimensioning", "Add measurement annotations and dimensioning information as part of spatial editing workflows.")
+                                            +card-labels(["Measurement annotations"])
+
+                                        +feature-left("images/features/messfunktionen-1.png", "Numerical geometry input", "Numerical Input", "Enter precise geometry values directly for controlled and exact feature creation.")
+                                            +card-labels(["Precise input"])
+
+                                        +feature-left("images/features/messfunktionen-1.png", "Measurement tools", "Measurement Tools", "Measure distance and area directly in the viewer to support planning and verification tasks.")
+                                            +card-labels(["Distance", "Area"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-1.png", "Data editing backend services", "Data Editing Backend", "Use QWC Data Service with PostGIS integration as the backend foundation for editing workflows.")
+                                            +card-labels(["QWC Data Service", "PostGIS"])
+
+                                        +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "Attribute forms and editing fields", "Attribute Forms", "Configure editing forms with defaults, filtered value relations, and visibility logic for grouped fields.")
+                                            +card-labels(["Default values", "Value filters", "Group visibility"])
+
+                                        +feature-left("images/features/datenabfragen-1.png", "Attribute table tools", "Attribute Table Tools", "Work with CSV export, extent filtering, and map-linked highlighting directly from table views.")
+                                            +card-labels(["CSV export", "Filter by extent", "Highlight filtered"])
+
+                                        +feature-left("images/features/datenabfragen-3.png", "Data source filters from QGIS", "Data Source Filters", "Respect QGIS-defined filters so the client reflects project-level dataset constraints.")
+                                            +card-labels(["QGIS filters"])
+
+                                        +feature-left("images/features/objektexport-1.png", "Tabular data export formats", "Data Export (Tabular)", "Export tabular data in common formats for downstream analysis and office workflows.")
+                                            +card-labels(["JSON", "CSV / Excel"])
+
+                                        +feature-left("images/features/objektexport-2.png", "Spatial data export formats", "Data Export (Spatial)", "Produce spatial exports in engineering and raster-friendly output formats.")
+                                            +card-labels(["DXF", "Raster"])
+
+                                        +feature-left("images/features/objektexport-1.png", "Clipboard export of data", "Clipboard Export", "Copy data directly from the interface for lightweight reuse in external tools and documents.")
+                                            +card-labels(["Direct copy"])
+
+                                        +feature-left("images/features/plugin-api-1.png", "Custom exporters and plugin logic", "Custom Exporters", "Extend export behavior through IdentifyPlugin exporters and project-specific output logic.")
+                                            +card-labels(["IdentifyPlugin", "Custom logic"])
+
+                                        +feature-left("images/features/drucken-export-1.png", "Print layouts from QGIS", "Print Layouts", "Use QGIS layouts and template-driven printing for consistent output from the web client.")
+                                            +card-labels(["QGIS layouts", "Templates"])
+
+                                        +feature-left("images/features/drucken-export-1.png", "PDF export output", "PDF Export", "Create high-resolution PDF output for operational and reporting use cases.")
+                                            +card-labels(["High-resolution"])
+
+                                        +feature-left("images/features/drucken-export-1.png", "Batch printing workflow", "Batch Printing", "Print map series in batches when workflows require repeated layout production.")
+                                            +card-labels(["Series printing"])
+
+                                        +feature-left("images/features/berichte-1.png", "Report generation with JasperReports", "Report Generation", "Generate reports with JasperReports and layer-based aggregation for formal output workflows.")
+                                            +card-labels(["JasperReports", "Aggregation"])
+
+                                        +feature-left("images/features/berichte-1.png", "Document services integration", "Document Services", "Connect reporting workflows through `qwc-document-service` and the reports plugin.")
+                                            +card-labels(["qwc-document-service", "Reports plugin"])
 
                             section(class="capability-section is-tinted", id="search-discovery")
                                 div(class="container")
@@ -534,127 +246,44 @@ html(lang="en")
                                         h3(class="capability-title") Analysis & Advanced Tools
                                         p(class="capability-desc") Beyond core viewing, QWC supports terrain, routing, street imagery, 3D, and temporal analysis workflows for more advanced use cases.
                                     div(class="columns is-multiline is-variable is-5")
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="Terrain analysis tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Terrain Analysis
-                                                    p(class="capability-card-text") Apply terrain-based calculations as part of advanced geospatial analysis workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Terrain calculations
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="Extended analysis tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Extended Analysis
-                                                    p(class="capability-card-text") Use broader GIS analysis tools to support more advanced spatial evaluation in the web client.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Advanced GIS tools
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="Visibility analysis planning", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Visibility Analysis (Planned)
-                                                    p(class="capability-card-text") Planned support for line-of-sight calculations and visibility-based evaluation workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Line-of-sight
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="Sun exposure analysis planning", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Sun Exposure (Planned)
-                                                    p(class="capability-card-text") Planned solar-analysis workflows for understanding exposure and sun-related spatial conditions.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Solar analysis
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="LiDAR profile analysis planning", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") LiDAR Profiles (Planned)
-                                                    p(class="capability-card-text") Planned elevation profiling workflows for LiDAR and terrain-focused datasets.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Elevation profiles
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="3D globe visualization", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") 3D Globe
-                                                    p(class="capability-card-text") Explore geospatial content in a globe-based 3D view for broader spatial interpretation.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") 3D visualization
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/3d-viewer-und-analyse-funktionen-1.png", alt="Future advanced 3D tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Advanced 3D (Planned)
-                                                    p(class="capability-card-text") Future 3D tooling is planned to extend analysis and visualization options beyond the current globe view.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Future 3D tools
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/option-routing-1.png", alt="Routing backend support", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Routing
-                                                    p(class="capability-card-text") Connect routing workflows to supported engines such as Valhalla for navigation and path analysis.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Routing engines
-                                                        span(class="capability-card-label") Valhalla
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/option-routing-2.png", alt="Routing extensibility", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Routing Extensibility
-                                                    p(class="capability-card-text") Plug in alternative routing engines when project requirements go beyond the default backend.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Other engines
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/street-imagery-panoramax-1.png", alt="Panoramax street imagery", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Street Imagery (Panoramax)
-                                                    p(class="capability-card-text") Link map positions to Panoramax street-level imagery for contextual field and urban analysis.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Street-level imagery
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/street-imagery-cylcomedia-1.png", alt="Cyclomedia street imagery", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Street Imagery (Cyclomedia)
-                                                    p(class="capability-card-text") Integrate external Cyclomedia imagery services into map-based spatial workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") External imagery
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/time-manager-1.png", alt="Time manager interface", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Time Manager
-                                                    p(class="capability-card-text") Work with a timeline interface and time filtering tools to navigate temporal datasets.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Timeline
-                                                        span(class="capability-card-label") Time filtering
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/time-manager-1.png", alt="Temporal analysis tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Temporal Analysis
-                                                    p(class="capability-card-text") Compare and classify time-based states through grouping and temporal analysis workflows.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Grouping
-                                                        span(class="capability-card-label") Classification
-                                                        span(class="capability-card-label") State comparison
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "Terrain analysis tools", "Terrain Analysis", "Apply terrain-based calculations as part of advanced geospatial analysis workflows.")
+                                            +card-labels(["Terrain calculations"])
+
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "Extended analysis tools", "Extended Analysis", "Use broader GIS analysis tools to support more advanced spatial evaluation in the web client.")
+                                            +card-labels(["Advanced GIS tools"])
+
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "Visibility analysis planning", "Visibility Analysis (Planned)", "Planned support for line-of-sight calculations and visibility-based evaluation workflows.")
+                                            +card-labels(["Line-of-sight"])
+
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "Sun exposure analysis planning", "Sun Exposure (Planned)", "Planned solar-analysis workflows for understanding exposure and sun-related spatial conditions.")
+                                            +card-labels(["Solar analysis"])
+
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "LiDAR profile analysis planning", "LiDAR Profiles (Planned)", "Planned elevation profiling workflows for LiDAR and terrain-focused datasets.")
+                                            +card-labels(["Elevation profiles"])
+
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "3D globe visualization", "3D Globe", "Explore geospatial content in a globe-based 3D view for broader spatial interpretation.")
+                                            +card-labels(["3D visualization"])
+
+                                        +feature-left("images/features/3d-viewer-und-analyse-funktionen-1.png", "Future advanced 3D tools", "Advanced 3D (Planned)", "Future 3D tooling is planned to extend analysis and visualization options beyond the current globe view.")
+                                            +card-labels(["Future 3D tools"])
+
+                                        +feature-left("images/features/option-routing-1.png", "Routing backend support", "Routing", "Connect routing workflows to supported engines such as Valhalla for navigation and path analysis.")
+                                            +card-labels(["Routing engines", "Valhalla"])
+
+                                        +feature-left("images/features/option-routing-2.png", "Routing extensibility", "Routing Extensibility", "Plug in alternative routing engines when project requirements go beyond the default backend.")
+                                            +card-labels(["Other engines"])
+
+                                        +feature-left("images/features/street-imagery-panoramax-1.png", "Panoramax street imagery", "Street Imagery (Panoramax)", "Link map positions to Panoramax street-level imagery for contextual field and urban analysis.")
+                                            +card-labels(["Street-level imagery"])
+
+                                        +feature-left("images/features/street-imagery-cylcomedia-1.png", "Cyclomedia street imagery", "Street Imagery (Cyclomedia)", "Integrate external Cyclomedia imagery services into map-based spatial workflows.")
+                                            +card-labels(["External imagery"])
+
+                                        +feature-left("images/features/time-manager-1.png", "Time manager interface", "Time Manager", "Work with a timeline interface and time filtering tools to navigate temporal datasets.")
+                                            +card-labels(["Timeline", "Time filtering"])
+
+                                        +feature-left("images/features/time-manager-1.png", "Temporal analysis tools", "Temporal Analysis", "Compare and classify time-based states through grouping and temporal analysis workflows.")
+                                            +card-labels(["Grouping", "Classification", "State comparison"])
 
                             section(class="capability-section", id="integration-interoperability")
                                 div(class="container")
@@ -663,143 +292,48 @@ html(lang="en")
                                         h3(class="capability-title") Integration & Architecture
                                         p(class="capability-desc") QWC builds on QGIS Server and modular services, so it can fit into enterprise GIS stacks without breaking established standards and workflows.
                                     div(class="columns is-multiline is-variable is-5")
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-1.png", alt="QGIS Server services", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") QGIS Server
-                                                    p(class="capability-card-text") Use QGIS Server as the service foundation for publishing and transaction-capable spatial services.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") WMS
-                                                        span(class="capability-card-label") WFS
-                                                        span(class="capability-card-label") WFS-T
-                                                        span(class="capability-card-label") WCS
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/schnittstellen-und-datenaustausch-1.png", alt="OGC compliant services", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") OGC Compliance
-                                                    p(class="capability-card-text") Rely on standards-compliant interfaces that work with wider spatial infrastructures and third-party clients.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Standards-compliant
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/drucken-export-1.png", alt="Server printing and legend generation", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Server Printing
-                                                    p(class="capability-card-text") Provide centralized printing and legend generation through backend services.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Print services
-                                                        span(class="capability-card-label") Legend generation
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-übersicht-1.png", alt="Direct QGIS project integration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") QGIS Integration
-                                                    p(class="capability-card-text") Work directly from QGIS projects instead of maintaining separate map definitions for the web client.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") QGIS projects
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-8.png", alt="Microservices architecture", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Microservices Architecture
-                                                    p(class="capability-card-text") Run QWC as a set of focused services that communicate through REST-based interfaces.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") qwc-services
-                                                        span(class="capability-card-label") REST
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-6.png", alt="Python Flask service technology", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Service Technology
-                                                    p(class="capability-card-text") Build on Python Flask services for a lightweight and maintainable backend stack.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Python
-                                                        span(class="capability-card-label") Flask
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-2.png", alt="Deployment options for QWC services", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Deployment Options
-                                                    p(class="capability-card-text") Deploy with containerized or classic Python web-server setups depending on infrastructure requirements.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Docker
-                                                        span(class="capability-card-label") Apache + mod_wsgi
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-4.png", alt="OGC proxy service", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") OGC Proxy Service
-                                                    p(class="capability-card-text") Forward OGC requests while enforcing project-specific access and permission rules.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Request forwarding
-                                                        span(class="capability-card-label") Permission enforcement
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/funktionen-viewer-1.png", alt="Viewer service access control", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Viewer Service
-                                                    p(class="capability-card-text") Deliver the effective viewer configuration and enforce client-side access control consistently.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Viewer config
-                                                        span(class="capability-card-label") Access control
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-admin-gui-2.png", alt="Admin GUI for resource control", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Admin GUI
-                                                    p(class="capability-card-text") Manage users, resources, and operational settings through a dedicated administrative interface.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") User management
-                                                        span(class="capability-card-label") Resource control
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/konfiguration-configjson-1.png", alt="Static configuration generation", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Config Generator
-                                                    p(class="capability-card-text") Generate static configuration outputs from managed project definitions and settings.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Static configs
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/plugin-api-1.png", alt="JavaScript API integration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") JavaScript API
-                                                    p(class="capability-card-text") Integrate the frontend into portals and bespoke apps through a dedicated JavaScript API.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Frontend integration
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/client-to-client-api-integration-1.png", alt="Client to client API communication", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Client-to-Client API
-                                                    p(class="capability-card-text") Coordinate actions and state between embedded clients and connected interfaces.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Cross-client communication
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/fachanwendungen-1.jpg", alt="External integrations with cadastre and OEREB", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") External Integrations
-                                                    p(class="capability-card-text") Connect QWC with cadastre platforms, legal restriction systems, and other domain applications.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Cadastre
-                                                        span(class="capability-card-label") OEREB
+
+                                        +feature-left("images/features/qwc-und-qwc-services-1.png", "QGIS Server services", "QGIS Server", "Use QGIS Server as the service foundation for publishing and transaction-capable spatial services.")
+                                            +card-labels(["WMS", "WFS", "WFS-T", "WCS"])
+
+                                        +feature-left("images/features/schnittstellen-und-datenaustausch-1.png", "OGC compliant services", "OGC Compliance", "Rely on standards-compliant interfaces that work with wider spatial infrastructures and third-party clients.")
+                                            +card-labels(["Standards-compliant"])
+
+                                        +feature-left("images/features/drucken-export-1.png", "Server printing and legend generation", "Server Printing", "Provide centralized printing and legend generation through backend services.")
+                                            +card-labels(["Print services", "Legend generation"])
+
+                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "Direct QGIS project integration", "QGIS Integration", "Work directly from QGIS projects instead of maintaining separate map definitions for the web client.")
+                                            +card-labels(["QGIS projects"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-8.png", "Microservices architecture", "Microservices Architecture", "Run QWC as a set of focused services that communicate through REST-based interfaces.")
+                                            +card-labels(["qwc-services", "REST"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-6.png", "Python Flask service technology", "Service Technology", "Build on Python Flask services for a lightweight and maintainable backend stack.")
+                                            +card-labels(["Python", "Flask"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-2.png", "Deployment options for QWC services", "Deployment Options", "Deploy with containerized or classic Python web-server setups depending on infrastructure requirements.")
+                                            +card-labels(["Docker", "Apache + mod_wsgi"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-4.png", "OGC proxy service", "OGC Proxy Service", "Forward OGC requests while enforcing project-specific access and permission rules.")
+                                            +card-labels(["Request forwarding", "Permission enforcement"])
+
+                                        +feature-left("images/features/funktionen-viewer-1.png", "Viewer service access control", "Viewer Service", "Deliver the effective viewer configuration and enforce client-side access control consistently.")
+                                            +card-labels(["Viewer config", "Access control"])
+
+                                        +feature-left("images/features/qwc-admin-gui-2.png", "Admin GUI for resource control", "Admin GUI", "Manage users, resources, and operational settings through a dedicated administrative interface.")
+                                            +card-labels(["User management", "Resource control"])
+
+                                        +feature-left("images/features/konfiguration-configjson-1.png", "Static configuration generation", "Config Generator", "Generate static configuration outputs from managed project definitions and settings.")
+                                            +card-labels(["Static configs"])
+
+                                        +feature-left("images/features/plugin-api-1.png", "JavaScript API integration", "JavaScript API", "Integrate the frontend into portals and bespoke apps through a dedicated JavaScript API.")
+                                            +card-labels(["Frontend integration"])
+
+                                        +feature-left("images/features/client-to-client-api-integration-1.png", "Client to client API communication", "Client-to-Client API", "Coordinate actions and state between embedded clients and connected interfaces.")
+                                            +card-labels(["Cross-client communication"])
+
+                                        +feature-left("images/features/fachanwendungen-1.jpg", "External integrations with cadastre and OEREB", "External Integrations", "Connect QWC with cadastre platforms, legal restriction systems, and other domain applications.")
+                                            +card-labels(["Cadastre", "OEREB"])
 
                             section(class="capability-section is-tinted", id="administration-security")
                                 div(class="container")
@@ -808,169 +342,53 @@ html(lang="en")
                                         h3(class="capability-title") Security & User Management
                                         p(class="capability-desc") Authentication, permissions, theming, and saved configuration allow QWC to support controlled multi-user deployments without losing flexibility.
                                     div(class="columns is-multiline is-variable is-5")
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/agdi-admin-ui-2.png", alt="Authentication methods", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Authentication Methods
-                                                    p(class="capability-card-text") Integrate with common enterprise and web authentication systems without reworking the platform core.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") DB auth
-                                                        span(class="capability-card-label") LDAP / AD
-                                                        span(class="capability-card-label") OIDC
-                                                        span(class="capability-card-label") JWT
-                                                        span(class="capability-card-label") SAML / Kerberos
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/agdi-admin-ui-2.png", alt="Token based authentication", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Token-Based Auth
-                                                    p(class="capability-card-text") Support JWT-based authentication for API-driven and distributed access patterns.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") JWT tokens
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-4.png", alt="Secure WMS access for third party apps", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Secure WMS Access
-                                                    p(class="capability-card-text") Provide protected WMS access for third-party applications through authenticated service endpoints.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Basic Auth
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/user-und-zugriffsmanagement-2.png", alt="Role based access controls", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Role-Based Access
-                                                    p(class="capability-card-text") Control who can see and use maps, layers, attributes, and tools in each deployment.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Map
-                                                        span(class="capability-card-label") Layer
-                                                        span(class="capability-card-label") Attribute
-                                                        span(class="capability-card-label") Tool
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/editieren-erweiterte-funktionen-1.png", alt="Editing permissions", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Editing Permissions
-                                                    p(class="capability-card-text") Restrict which datasets and edit workflows are available to each role.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Edit datasets
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/drucken-export-1.png", alt="Print permissions for layouts", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Print Permissions
-                                                    p(class="capability-card-text") Control which print layouts and output options are available to different users.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Layout control
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/agdi-admin-ui-2.png", alt="AGDI admin interface", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Admin Interface
-                                                    p(class="capability-card-text") Use AGDI Admin UI to manage users, resources, and deployment settings in one place.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") AGDI Admin UI
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/konfiguration-configjson-1.png", alt="Configuration types", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Configuration Types
-                                                    p(class="capability-card-text") Operate with either database-backed configuration or static config files, depending on project needs.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Config DB
-                                                        span(class="capability-card-label") Static files
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/konfiguration-configjson-1.png", alt="Config generation from QGIS projects", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Config Generation
-                                                    p(class="capability-card-text") Generate deployable configuration outputs directly from maintained QGIS projects and settings.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") From QGIS projects
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/customizing-1.png", alt="UI customization", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") UI Customization
-                                                    p(class="capability-card-text") Tailor menus, tools, logos, and CSS styling to match project workflows and branding.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Menus
-                                                        span(class="capability-card-label") Tools
-                                                        span(class="capability-card-label") Logos
-                                                        span(class="capability-card-label") CSS
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/admin-gui-themes-plugin-1.png", alt="Theming and runtime switching", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Theming
-                                                    p(class="capability-card-text") Define visual themes with CSS variables and switch them at runtime when needed.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") CSS variables
-                                                        span(class="capability-card-label") Runtime switching
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/customizing-1.png", alt="Responsive configuration for mobile and desktop", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Responsive Config
-                                                    p(class="capability-card-text") Override behavior and interface settings for mobile and desktop use cases.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Mobile / desktop
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/customizing-1.png", alt="Language settings and multilingual UI", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Language Settings
-                                                    p(class="capability-card-text") Configure multi-language user interfaces for multilingual deployment environments.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Multi-language UI
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-1.png", alt="User preferences for layers and transparency", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") User Preferences
-                                                    p(class="capability-card-text") Keep personal layer settings, transparency, and ordering preferences between sessions.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Layer settings
-                                                        span(class="capability-card-label") Transparency
-                                                        span(class="capability-card-label") Order
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qgis-web-client-1.png", alt="Saved map state", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Saved State
-                                                    p(class="capability-card-text") Persist extent, layers, redlining, and external data to restore working map sessions.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Extent
-                                                        span(class="capability-card-label") Layers
-                                                        span(class="capability-card-label") Redlining
-                                                        span(class="capability-card-label") External data
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/barrierefreiheit-1.png", alt="Accessibility features", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Accessibility
-                                                    p(class="capability-card-text") Improve usability through keyboard navigation, shortcuts, and high-contrast support.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Keyboard navigation
-                                                        span(class="capability-card-label") Shortcuts
-                                                        span(class="capability-card-label") High contrast
+                                        +feature-left("images/features/agdi-admin-ui-2.png", "Authentication methods", "Authentication Methods", "Integrate with common enterprise and web authentication systems without reworking the platform core.")
+                                            +card-labels(["DB auth", "LDAP / AD", "OIDC", "JWT", "SAML / Kerberos"])
+
+                                        +feature-left("images/features/agdi-admin-ui-2.png", "Token based authentication", "Token-Based Auth", "Support JWT-based authentication for API-driven and distributed access patterns.")
+                                            +card-labels(["JWT tokens"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-4.png", "Secure WMS access for third party apps", "Secure WMS Access", "Provide protected WMS access for third-party applications through authenticated service endpoints.")
+                                            +card-labels(["Basic Auth"])
+
+                                        +feature-left("images/features/user-und-zugriffsmanagement-2.png", "Role based access controls", "Role-Based Access", "Control who can see and use maps, layers, attributes, and tools in each deployment.")
+                                            +card-labels(["Map", "Layer", "Attribute", "Tool"])
+
+                                        +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "Editing permissions", "Editing Permissions", "Restrict which datasets and edit workflows are available to each role.")
+                                            +card-labels(["Edit datasets"])
+
+                                        +feature-left("images/features/drucken-export-1.png", "Print permissions for layouts", "Print Permissions", "Control which print layouts and output options are available to different users.")
+                                            +card-labels(["Layout control"])
+
+                                        +feature-left("images/features/agdi-admin-ui-2.png", "AGDI admin interface", "Admin Interface", "Use AGDI Admin UI to manage users, resources, and deployment settings in one place.")
+                                            +card-labels(["AGDI Admin UI"])
+
+                                        +feature-left("images/features/konfiguration-configjson-1.png", "Configuration types", "Configuration Types", "Operate with either database-backed configuration or static config files, depending on project needs.")
+                                            +card-labels(["Config DB", "Static files"])
+
+                                        +feature-left("images/features/konfiguration-configjson-1.png", "Config generation from QGIS projects", "Config Generation", "Generate deployable configuration outputs directly from maintained QGIS projects and settings.")
+                                            +card-labels(["From QGIS projects"])
+
+                                        +feature-left("images/features/customizing-1.png", "UI customization", "UI Customization", "Tailor menus, tools, logos, and CSS styling to match project workflows and branding.")
+                                            +card-labels(["Menus", "Tools", "Logos", "CSS"])
+
+                                        +feature-left("images/features/admin-gui-themes-plugin-1.png", "Theming and runtime switching", "Theming", "Define visual themes with CSS variables and switch them at runtime when needed.")
+                                            +card-labels(["CSS variables", "Runtime switching"])
+
+                                        +feature-left("images/features/customizing-1.png", "Responsive configuration for mobile and desktop", "Responsive Config", "Override behavior and interface settings for mobile and desktop use cases.")
+                                            +card-labels(["Mobile / desktop"])
+
+                                        +feature-left("images/features/customizing-1.png", "Language settings and multilingual UI", "Language Settings", "Configure multi-language user interfaces for multilingual deployment environments.")
+                                            +card-labels(["Multi-language UI"])
+
+                                        +feature-left("images/features/qgis-web-client-1.png", "User preferences for layers and transparency", "User Preferences", "Keep personal layer settings, transparency, and ordering preferences between sessions.")
+                                            +card-labels(["Layer settings", "Transparency", "Order"])
+
+                                        +feature-left("images/features/qgis-web-client-1.png", "Saved map state", "Saved State", "Persist extent, layers, redlining, and external data to restore working map sessions.")
+                                            +card-labels(["Extent", "Layers", "Redlining", "External data"])
+
+                                        +feature-left("images/features/barrierefreiheit-1.png", "Accessibility features", "Accessibility", "Improve usability through keyboard navigation, shortcuts, and high-contrast support.")
+                                            +card-labels(["Keyboard navigation", "Shortcuts", "High contrast"])
 
                             section(class="capability-section", id="platform-lifecycle")
                                 div(class="container")
@@ -979,154 +397,50 @@ html(lang="en")
                                         h3(class="capability-title") Deployment, Extensibility & Ecosystem
                                         p(class="capability-desc") QWC supports containerized deployment, plugin-based extension, offline field workflows, and a multi-provider open source ecosystem.
                                     div(class="columns is-multiline is-variable is-5")
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/service-architektur-2.png", alt="Docker deployment", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Docker Deployment
-                                                    p(class="capability-card-text") Run one service per container for reproducible deployment and clearer operational boundaries.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") One service per container
-                                                        span(class="capability-card-label") Controlled environment
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-2.png", alt="Kubernetes orchestration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Kubernetes
-                                                    p(class="capability-card-text") Scale and orchestrate deployments in managed container environments.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Scaling
-                                                        span(class="capability-card-label") Orchestration
-                                                        span(class="capability-card-label") Management
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-und-qwc-services-2.png", alt="Container registry distribution", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Container Registry
-                                                    p(class="capability-card-text") Distribute deployment artifacts through centralized container images.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Centralized distribution
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/plugin-api-1.png", alt="Plugin API", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Plugin API
-                                                    p(class="capability-card-text") Extend the client through JavaScript-based plugins without forking the whole application.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") JavaScript
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/plugin-api-1.png", alt="Extensions and custom tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Extensions
-                                                    p(class="capability-card-text") Use the `qwc-extra` repository and project-specific tools to extend the standard client.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") qwc-extra
-                                                        span(class="capability-card-label") Custom tools
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/feature-info-templates-1.png", alt="Feature info service templates", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Feature Info Service
-                                                    p(class="capability-card-text") Configure feature information output through reusable HTML templates.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") HTML templates
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/option-offline-funktionalität-mit-qfield-1.png", alt="QField integration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") QField Integration
-                                                    p(class="capability-card-text") Connect QWC workflows with the native QField mobile application.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Native mobile app
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/option-offline-funktionalität-mit-qfield-1.png", alt="Offline data extracts", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Offline Data
-                                                    p(class="capability-card-text") Prepare GeoPackage extracts for offline field workflows and disconnected use.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") GeoPackage
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/option-offline-funktionalität-mit-qfield-1.png", alt="Offline editing sync", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Offline Editing
-                                                    p(class="capability-card-text") Sync offline changes back to the database when field work reconnects to central systems.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Database sync
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/fachanwendungen-1.jpg", alt="Custom domain specific tools", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Custom Tools
-                                                    p(class="capability-card-text") Add project-specific tools such as Plotinfo and other domain-oriented extensions.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Plotinfo
-                                                        span(class="capability-card-label") Domain tools
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/fachanwendungen-1.jpg", alt="Cadastre integration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Cadastre Integration
-                                                    p(class="capability-card-text") Integrate land registry and cadastre workflows into QWC-based applications.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Land registry
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/fachanwendungen-1.jpg", alt="OEREB integration", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") OEREB Integration
-                                                    p(class="capability-card-text") Support legal land restriction workflows and related official data services.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Legal land restrictions
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-kanton-glarus-solothurn-1.png", alt="Roadmap and release planning", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Roadmap
-                                                    p(class="capability-card-text") Follow a roadmap that combines stable releases with planned platform evolution.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") LTS releases
-                                                        span(class="capability-card-label") Bug & security fixes
-                                                        span(class="capability-card-label") 3D
-                                                        span(class="capability-card-label") OGC API
-                                                        span(class="capability-card-label") Sensor integration
-                                                        span(class="capability-card-label") LiDAR
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-kanton-glarus-solothurn-1.png", alt="Open source ecosystem", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Open Source
-                                                    p(class="capability-card-text") Avoid vendor lock-in and work with a multi-provider ecosystem around QWC and QGIS.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") No vendor lock-in
-                                                        span(class="capability-card-label") Multi-provider
-                                        div(class="column is-4-desktop is-6-tablet is-12-mobile")
-                                            div(class="capability-card")
-                                                div(class="capability-card-image")
-                                                    img(src="images/features/qwc-kanton-glarus-solothurn-1.png", alt="Community ecosystem", width="900", height="560")
-                                                div(class="capability-card-body")
-                                                    h4(class="capability-card-title") Community
-                                                    p(class="capability-card-text") Rely on conferences, user groups, and forums to share knowledge and improve the platform.
-                                                    div(class="capability-card-labels")
-                                                        span(class="capability-card-label") Conferences
-                                                        span(class="capability-card-label") User groups
-                                                        span(class="capability-card-label") Forums
+                                        +feature-left("images/features/service-architektur-2.png", "Docker deployment", "Docker Deployment", "Run one service per container for reproducible deployment and clearer operational boundaries.")
+                                            +card-labels(["One service per container", "Controlled environment"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-2.png", "Kubernetes orchestration", "Kubernetes", "Scale and orchestrate deployments in managed container environments.")
+                                            +card-labels(["Scaling", "Orchestration", "Management"])
+
+                                        +feature-left("images/features/qwc-und-qwc-services-2.png", "Container registry distribution", "Container Registry", "Distribute deployment artifacts through centralized container images.")
+                                            +card-labels(["Centralized distribution"])
+
+                                        +feature-left("images/features/plugin-api-1.png", "Plugin API", "Plugin API", "Extend the client through JavaScript-based plugins without forking the whole application.")
+                                            +card-labels(["JavaScript"])
+
+                                        +feature-left("images/features/plugin-api-1.png", "Extensions and custom tools", "Extensions", "Use the `qwc-extra` repository and project-specific tools to extend the standard client.")
+                                            +card-labels(["qwc-extra", "Custom tools"])
+
+                                        +feature-left("images/features/feature-info-templates-1.png", "Feature info service templates", "Feature Info Service", "Configure feature information output through reusable HTML templates.")
+                                            +card-labels(["HTML templates"])
+
+                                        +feature-left("images/features/option-offline-funktionalität-mit-qfield-1.png", "QField integration", "QField Integration", "Connect QWC workflows with the native QField mobile application.")
+                                            +card-labels(["Native mobile app"])
+
+                                        +feature-left("images/features/option-offline-funktionalität-mit-qfield-1.png", "Offline data extracts", "Offline Data", "Prepare GeoPackage extracts for offline field workflows and disconnected use.")
+                                            +card-labels(["GeoPackage"])
+
+                                        +feature-left("images/features/option-offline-funktionalität-mit-qfield-1.png", "Offline editing sync", "Offline Editing", "Sync offline changes back to the database when field work reconnects to central systems.")
+                                            +card-labels(["Database sync"])
+
+                                        +feature-left("images/features/fachanwendungen-1.jpg", "Custom domain specific tools", "Custom Tools", "Add project-specific tools such as Plotinfo and other domain-oriented extensions.")
+                                            +card-labels(["Plotinfo", "Domain tools"])
+
+                                        +feature-left("images/features/fachanwendungen-1.jpg", "Cadastre integration", "Cadastre Integration", "Integrate land registry and cadastre workflows into QWC-based applications.")
+                                            +card-labels(["Land registry"])
+
+                                        +feature-left("images/features/fachanwendungen-1.jpg", "OEREB integration", "OEREB Integration", "Support legal land restriction workflows and related official data services.")
+                                            +card-labels(["Legal land restrictions"])
+
+                                        +feature-left("images/features/qwc-kanton-glarus-solothurn-1.png", "Roadmap and release planning", "Roadmap", "Follow a roadmap that combines stable releases with planned platform evolution.")
+                                            +card-labels(["LTS releases", "Bug & security fixes", "3D", "OGC API", "Sensor integration", "LiDAR"])
+
+                                        +feature-left("images/features/qwc-kanton-glarus-solothurn-1.png", "Open source ecosystem", "Open Source", "Avoid vendor lock-in and work with a multi-provider ecosystem around QWC and QGIS.")
+                                            +card-labels(["No vendor lock-in", "Multi-provider"])
+
+                                        +feature-left("images/features/qwc-kanton-glarus-solothurn-1.png", "Community ecosystem", "Community", "Rely on conferences, user groups, and forums to share knowledge and improve the platform.")
+                                            +card-labels(["Conferences", "User groups", "Forums"])
 
                             section.section(id="platform-design", style="background-color: #f8f7f4; padding: 5rem 1.5rem 7rem;")
                                 .container
