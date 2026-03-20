@@ -9,7 +9,6 @@
     "browsersync": "browser-sync start --directory --server ./public --files ./public/* --startPath index.html",
     "clean": "rimraf public/*",
     "copy-assets": "cpx \"src/assets/**/*.*\" public/",
-    "copy-images": "cpx \"src/images/**/*.*\" public/images/",
     "css-compile": "sass --style expanded src/scss/bulma-theme.scss public/css/bulma/bulma.css",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output public/css/bulma/bulma.min.css public/css/bulma/bulma.css",
     "css": "npm-run-all --sequential css-*",
