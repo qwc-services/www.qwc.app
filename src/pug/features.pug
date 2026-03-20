@@ -1,18 +1,43 @@
-mixin feature-left(img, alt, title, text)
+mixin feature-left(img, alt, title, ...texts)
     div(class="column is-4-desktop is-6-tablet is-12-mobile")
-        div(class="capability-card")
-            div(class="capability-card-image")
+        .capability-card
+            .capability-card-image
                 img(src=img, alt=alt, width="900", height="560")
-            div(class="capability-card-body")
-                h4(class="capability-card-title")= title
-                p(class="capability-card-text")= text
+            .capability-card-body
+                h4.capability-card-title= title
+                each text in texts
+                    p.capability-card-text= text
                 if block
                     block
 
 mixin card-labels(labels)
-    div(class="capability-card-labels")
+    .capability-card-labels
         each label in labels
-            span(class="capability-card-label")= label
+            span.capability-card-label= label
+
+mixin feature-image-left(img, alt, title, text)
+    .container
+        div(class="is-vcentered columns is-multiline")
+            div(class="column is-12 is-7-desktop mb-10 mb-0-desktop")
+                div(class="has-mw-xl mr-auto-desktop")
+                img(src=img, alt=alt, width="900", height="560")
+            div(class="column is-12 is-5-desktop")
+                div(class="has-mw-md-desktop mx-auto")
+                    h3(class="mb-14 title is-size-3 is-spaced")= title
+                    div(class="mb-6 is-flex is-align-items-start")= text
+                    if block
+                        block
+
+mixin feature-image-right(img, alt, title, text)
+    .container
+        div(class="is-vcentered columns is-multiline is-align-items-center")
+            div(class="column is-12 is-6-desktop mb-10 mb-0-desktop")
+                h3(class="mb-14 title is-size-3")= title
+                div(class="mb-6 is-flex is-align-items-start")= text
+                if block
+                    block
+            div(class="column is-12 is-6-desktop")
+                img(src=img, alt=alt, width="900", height="560")
 
 doctype html
 html(lang="en")
@@ -21,7 +46,7 @@ html(lang="en")
         include includes/head.pug
 
     body(class="page-with-fixed-navbar")
-        div(class="")
+        div
             nav(class="navbar site-navbar has-background-white py-5")
                 div(class="container is-fluid")
                     include includes/navbar-logo.pug
@@ -145,7 +170,7 @@ html(lang="en")
                                         +feature-left("images/features/feature-info-templates-1.png", "Configurable info templates", "Info Templates", "Present feature information through configurable templates in HTML, JSON, or plain text formats.")
                                             +card-labels(["HTML", "JSON", "Plain text"])
 
-                                        +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE Permalinks and shareable map state", "Permalinks & Bookmarks", "Generate compact shareable URLs that preserve the current map state and context.\n\nSave, reopen, and manage stored map views for repeatable navigation and collaboration.")
+                                        +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE Permalinks and shareable map state", "Permalinks & Bookmarks", "Generate compact shareable URLs that preserve the current map state and context.", "Save, reopen, and manage stored map views for repeatable navigation and collaboration.")
                                             +card-labels(["Compact URLs", "Shareable state"])
 
                                         +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE User preferences for layers and transparency", "User Preferences", "Keep personal layer settings, transparency, and ordering preferences between sessions.")
