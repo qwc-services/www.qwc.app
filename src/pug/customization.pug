@@ -1,3 +1,15 @@
+mixin application(img, alt, lable, title)
+    div(class="column is-12")
+        div(class="case-study-card")
+            div(class="case-study-image")
+                img(src=img, alt=alt)
+            div(class="case-study-body")
+                span(class="case-study-meta")= lable
+                h3(class="case-study-title")= title
+                p(class="case-study-text")
+                  if block
+                      block
+
 doctype html
 html(lang="en")
     head
@@ -68,37 +80,30 @@ html(lang="en")
                                     li Structured configuration
                                     li Open standards foundation
 
-                    //- +feature-left("", "", "Pop-out Dialogs", "Open detached dialogs for extended inspection workflows and domain-specific application views.")
-                    //- +card-labels(["Detached dialogs", "Domain apps"])
-
                     div(class="custom-value", id="case-studies")
                         h2(class="custom-value-title") Case Studies
                         p(class="custom-value-text") These examples show how QWC can support both focused technical workflows and complex municipal deployments without forcing the same interface on every project.
                         div(class="columns is-multiline is-variable is-5 case-studies-grid")
-                            div(class="column is-12")
-                                div(class="case-study-card")
-                                    div(class="case-study-image")
-                                        img(src="images/case-studies/fixpunkte-fpds2-1.png", alt="Fixpunkte FPDS2 case study screenshot")
-                                    div(class="case-study-body")
-                                        span(class="case-study-meta") Surveying Workflow
-                                        h3(class="case-study-title") Fixpunkte - FPDS2
-                                        p(class="case-study-text") A specialized technical viewer for Swiss fixed-point data, built to support precise access to reference information through a focused and efficient interface.
-                                        ul(class="case-study-points")
-                                            li Tailored to a domain-specific workflow instead of a generic public map portal.
-                                            li Presents structured geospatial information clearly for expert users.
-                                            li Shows how QWC can be shaped into a focused professional application.
-                            div(class="column is-12")
-                                div(class="case-study-card")
-                                    div(class="case-study-image")
-                                        img(src="images/case-studies/planas-stadt-frankfurt-1.png", alt="PlanAS Stadt Frankfurt case study screenshot")
-                                    div(class="case-study-body")
-                                        span(class="case-study-meta") Municipal Platform
-                                        h3(class="case-study-title") PlanAS Stadt Frankfurt
-                                        p(class="case-study-text") A city-scale planning and urban information platform that demonstrates how QWC can support a richer municipal deployment with tailored content and specialized map tools.
-                                        ul(class="case-study-points")
-                                            li Organizes planning information in a way that fits municipal processes and public-sector needs.
-                                            li Combines custom presentation, workflow orientation, and project-specific functionality.
-                                            li Illustrates how the same platform can scale from narrow use cases to broader city deployments.
+                            +application("images/case-studies/fixpunkte-fpds2-1.png", "Fixpunkte FPDS2 case study screenshot", "Surveying Workflow", "Fixpunkte - FPDS2")
+                                A specialized technical viewer for Swiss fixed-point data, built to support precise access to reference information through a focused and efficient interface.
+                                ul(class="case-study-points")
+                                    li Tailored to a domain-specific workflow instead of a generic public map portal.
+                                    li Presents structured geospatial information clearly for expert users.
+                                    li Shows how QWC can be shaped into a focused professional application.
+                            +application("images/case-studies/planas-stadt-frankfurt-1.png", "PlanAS Stadt Frankfurt case study screenshot", "Municipal Platform", "PlanAS City of Frankfurt")
+                                | A city-scale planning and urban information platform that demonstrates how QWC can support a richer municipal deployment with tailored content and specialized map tools.
+                                ul(class="case-study-points")
+                                    li Organizes planning information in a way that fits municipal processes and public-sector needs.
+                                    li Combines custom presentation, workflow orientation, and project-specific functionality.
+                                    li Illustrates how the same platform can scale from narrow use cases to broader city deployments.
+                            +application("images/features/fachanwendungen-1.jpg", "Giswater screenshot", "Utility applicaiton", "Giswater")
+                                a(href="https://www.giswater.org/?lang=en") Giswater Homepage
+                            +application("images/case-studies/qgiscloud.png", "qgiscloud.com screenshot", "Cloud service", "qgiscloud.com")
+                                a(href="https://www.qgiscloud.com") QGIS Cloud Homepage
+
+
+                    //- +feature-left("", "", "Pop-out Dialogs", "Open detached dialogs for extended inspection workflows and domain-specific application views.")
+                    //- +card-labels(["Detached dialogs", "Domain apps"])
 
             section(class="section")
                 include includes/footer.pug
