@@ -6,7 +6,10 @@ mixin feature-left(img, alt, title, ...texts)
             .capability-card-body
                 h4.capability-card-title= title
                 each text in texts
-                    p.capability-card-text= text
+                    p
+                        span.icon
+                            i(class="fas fa-check")
+                        span= text
                 if block
                     block
 
@@ -128,14 +131,11 @@ html(lang="en")
                                         h3(class="capability-title") Core Map Experience
                                         p(class="capability-desc") Core map workflows combine project themes, layer control, search, feature inspection, and temporal navigation in one consistent viewer experience.
                                     div(class="columns is-multiline is-variable is-5")
-                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "Responsive interface on multiple devices", "Theme Management", "Switch between QGIS projects and support multiple project contexts within the same client setup.")
+                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "FIXIMAGE Responsive interface on multiple devices", "Theme Management", "Switch between QGIS projects and support multiple project contexts within the same client setup.")
                                             +card-labels(["Theme switcher", "Multiple projects"])
 
-                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "FIXIMAGE Layer tree and project structure", "Layer Tree", "Browse layers in a hierarchical tree, control visibility, and manage ordering within the map.")
+                                        +feature-left("images/features/qwc-und-qwc-services-1.png", "Layer tree and project structure", "Layer Tree / Layer Visibility Rules", "Browse layers in a hierarchical tree, control visibility, and manage ordering within the map.", "Control visibility dynamically based on active layers, current extent, and current scale.")
                                             +card-labels(["Hierarchical tree", "Toggle visibility", "Layer ordering"])
-
-                                        +feature-left("images/features/dynamische-kartenlegende-1.png", "FIXIMAGE Layer visibility rules", "Layer Visibility Rules", "Control visibility dynamically based on active layers, current extent, and current scale.")
-                                            +card-labels(["Active layers", "Current extent", "Current scale"])
 
                                         +feature-left("images/features/dynamische-kartenlegende-1.png", "FIXIMAGE Dynamic legend display", "Dynamic Legend", "Show an auto-updating legend that adapts to the current map context and visible content.")
                                             +card-labels(["Auto-updating", "Context-aware"])
@@ -149,17 +149,11 @@ html(lang="en")
                                         +feature-left("images/features/datenabfragen-3.png", "FIXIMAGE Temporary and local datasets", "Temporary Data", "Load local datasets for temporary use and visualize them without committing them to a permanent service.")
                                             +card-labels(["Local datasets", "Temporary view"])
 
+                                        +feature-left("images/features/suche-1.png", "Full-text search with Solr", "Search", "Full-Text Search (Solr): Use indexed full-text search with faceted navigation to discover datasets and records more efficiently.", "Trigram Search: Provide a lighter SQL-based search alternative when full Solr indexing is not required.", "External Search APIs: Extend search with external providers such as OSM, Nominatim, Swisstopo, and custom API services.")
+                                            +card-labels(["Faceted search", "SQL search", "OSM / Nominatim"])
+
                                         +feature-left("images/features/datenabfragen-1.png", "FIXIMAGE Database-driven search", "Database Search", "Run configurable query-based search directly against database-backed content and project-specific logic.")
                                             +card-labels(["Query-based", "Configurable"])
-
-                                        +feature-left("images/features/suche-1.png", "Full-text search with Solr", "Full-Text Search (Solr)", "Use indexed full-text search with faceted navigation to discover datasets and records more efficiently.")
-                                            +card-labels(["Faceted search", "Indexed datasets"])
-
-                                        +feature-left("images/features/suche-1.png", "Trigram search configuration", "Trigram Search", "Provide a lighter SQL-based search alternative when full Solr indexing is not required.")
-                                            +card-labels(["Solr alternative", "SQL-based"])
-
-                                        +feature-left("images/features/kartenviewer-vbs-swisstopo-1.png", "FIXIMAGE External search APIs and geocoding", "External Search APIs", "Extend search with external providers such as OSM, Nominatim, Swisstopo, and custom API services.")
-                                            +card-labels(["OSM / Nominatim", "Swisstopo", "Custom APIs"])
 
                                         +feature-left("images/features/datenabfragen-1.png", "Feature information panel", "Feature Info", "Inspect selected objects through dedicated info panels with structured attribute access.")
                                             +card-labels(["Object info", "Attribute inspection"])
@@ -173,11 +167,8 @@ html(lang="en")
                                         +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE Permalinks and shareable map state", "Permalinks & Bookmarks", "Generate compact shareable URLs that preserve the current map state and context.", "Save, reopen, and manage stored map views for repeatable navigation and collaboration.")
                                             +card-labels(["Compact URLs", "Shareable state"])
 
-                                        +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE User preferences for layers and transparency", "User Preferences", "Keep personal layer settings, transparency, and ordering preferences between sessions.")
-                                            +card-labels(["Layer settings", "Transparency", "Order"])
-
-                                        +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE Saved map state", "Saved State", "Persist extent, layers, redlining, and external data to restore working map sessions.")
-                                            +card-labels(["Extent", "Layers", "Redlining", "External data"])
+                                        +feature-left("images/features/qgis-web-client-1.png", "FIXIMAGE User preferences for layers and transparency", "User Preferences / Saved State", "Keep personal layer settings, transparency, and ordering preferences between sessions.", "Persist extent, layers, redlining, and external data to restore working map sessions.")
+                                            +card-labels(["Layer settings", "Transparency", "Order", "Extent", "Layers", "Redlining", "External data"])
 
                             section(class="capability-section", id="data-analysis")
                                 div(class="container")
@@ -192,14 +183,11 @@ html(lang="en")
                                         +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "FIXIMAGE Advanced geometry tools", "Advanced Geometries", "Create structured shapes such as rectangles, squares, and ellipses for more precise geometric drafting.")
                                             +card-labels(["Rectangle", "Square", "Ellipse"])
 
-                                        +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "FIXIMAGE Feature editing tools", "Snapping", "Snap geometries during editing to keep spatial relationships and topology consistent.")
-                                            +card-labels(["Geometry snapping"])
+                                        +feature-left("images/features/messfunktionen-2.png", "Dimensioning and annotations", "Snapping / Dimensioning", "Snap geometries during editing to keep spatial relationships and topology consistent.", "Add measurement annotations and dimensioning information as part of spatial editing workflows.")
+                                            +card-labels(["Geometry snapping", "Measurement annotations"])
 
                                         +feature-left("images/features/editieren-erweiterte-funktionen-1.png", "FIXIMAGE Geometry transformation tools", "Geometry Transformations", "Scale, rotate, and transform geometries during editing to refine spatial features precisely.")
                                             +card-labels(["Scale", "Rotate", "Transform"])
-
-                                        +feature-left("images/features/messfunktionen-2.png", "Dimensioning and annotations", "Dimensioning", "Add measurement annotations and dimensioning information as part of spatial editing workflows.")
-                                            +card-labels(["Measurement annotations"])
 
                                         +feature-left("images/features/messfunktionen-1.png", "FIXIMAGE Numerical geometry input", "Numerical Input", "Enter precise geometry values directly for controlled and exact feature creation.")
                                             +card-labels(["Precise input"])
@@ -231,20 +219,14 @@ html(lang="en")
                                         +feature-left("images/features/objektexport-2.png", "Custom exporters and plugin logic", "Custom Exporters", "Extend export behavior through IdentifyPlugin exporters and project-specific output logic.")
                                             +card-labels(["IdentifyPlugin", "Custom logic"])
 
-                                        +feature-left("images/features/drucken-export-1.png", "Print layouts from QGIS", "Print Layouts", "Use QGIS layouts and template-driven printing for consistent output from the web client.")
-                                            +card-labels(["QGIS layouts", "Templates"])
+                                        +feature-left("images/features/drucken-export-1.png", "Print layouts from QGIS", "Print Layouts / PDF Export", "Use QGIS layouts and template-driven printing for consistent output from the web client.", "Create high-resolution PDF output for operational and reporting use cases.")
+                                            +card-labels(["QGIS layouts", "Templates", "High-resolution"])
 
-                                        +feature-left("images/features/drucken-export-1.png", "PDF export output", "PDF Export", "Create high-resolution PDF output for operational and reporting use cases.")
-                                            +card-labels(["High-resolution"])
-
-                                        +feature-left("images/features/drucken-export-1.png", "Batch printing workflow", "Batch Printing", "Print map series in batches when workflows require repeated layout production.")
+                                        +feature-left("images/features/berichte-1.png", "Batch printing workflow", "Batch Printing", "Print map series in batches when workflows require repeated layout production.")
                                             +card-labels(["Series printing"])
 
-                                        +feature-left("images/features/berichte-1.png", "Report generation with JasperReports", "Report Generation", "Generate reports with JasperReports and layer-based aggregation for formal output workflows.")
-                                            +card-labels(["JasperReports", "Aggregation"])
-
-                                        +feature-left("images/features/berichte-1.png", "Document services integration", "Document Services", "Connect reporting workflows through `qwc-document-service` and the reports plugin.")
-                                            +card-labels(["qwc-document-service", "Reports plugin"])
+                                        +feature-left("images/features/berichte-1.png", "Report generation with JasperReports", "Report Generation", "Generate reports with JasperReports and layer-based aggregation for formal output workflows.", "Connect reporting workflows through `qwc-document-service` and the reports plugin.")
+                                            +card-labels(["JasperReports", "Aggregation", "Reports plugin"])
 
                             section(class="capability-section is-tinted", id="search-discovery")
                                 div(class="container")
