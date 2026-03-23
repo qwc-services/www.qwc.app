@@ -131,7 +131,7 @@ html(lang="en")
                                         h3(class="capability-title") Core Map Experience
                                         p(class="capability-desc") Core map workflows combine project themes, layer control, search, feature inspection, and temporal navigation in one consistent viewer experience.
                                     div(class="columns is-multiline is-variable is-5")
-                                        +feature-left("images/features/qgis-web-client-übersicht-1.png", "FIXIMAGE Responsive interface on multiple devices", "Theme Management", "Switch between QGIS projects and support multiple project contexts within the same client setup.")
+                                        +feature-left("images/features/themes.png", "FIXIMAGE Responsive interface on multiple devices", "Theme Management", "Switch between QGIS projects and support multiple project contexts within the same client setup.")
                                             +card-labels(["Theme switcher", "Multiple projects"])
 
                                         +feature-left("images/features/qwc-und-qwc-services-1.png", "Layer tree and project structure", "Layer Tree / Layer Visibility Rules", "Browse layers in a hierarchical tree, control visibility, and manage ordering within the map.", "Control visibility dynamically based on active layers, current extent, and current scale.")
@@ -151,9 +151,6 @@ html(lang="en")
 
                                         +feature-left("images/features/suche-1.png", "Full-text search with Solr", "Search", "Full-Text Search (Solr): Use indexed full-text search with faceted navigation to discover datasets and records more efficiently.", "Trigram Search: Provide a lighter SQL-based search alternative when full Solr indexing is not required.", "External Search APIs: Extend search with external providers such as OSM, Nominatim, Swisstopo, and custom API services.")
                                             +card-labels(["Faceted search", "SQL search", "OSM / Nominatim"])
-
-                                        +feature-left("images/features/datenabfragen-1.png", "FIXIMAGE Database-driven search", "Database Search", "Run configurable query-based search directly against database-backed content and project-specific logic.")
-                                            +card-labels(["Query-based", "Configurable"])
 
                                         +feature-left("images/features/datenabfragen-1.png", "Feature information panel", "Feature Info", "Inspect selected objects through dedicated info panels with structured attribute access.")
                                             +card-labels(["Object info", "Attribute inspection"])
