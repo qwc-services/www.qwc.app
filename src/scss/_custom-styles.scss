@@ -217,6 +217,7 @@ html {
         height: 68px;
         width: auto;
         max-width: 240px;
+        filter: grayscale(1);
         object-fit: contain;
         display: block;
     }
