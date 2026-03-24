@@ -65,12 +65,13 @@ html(lang="en")
                                 h1(class="section-main-title") Key Features
 
                             div(class="columns is-multiline is-variable is-5", style="margin-top: 3.75rem; margin-bottom: 3.5rem;")
-                                +top-category("map-interaction", "fas fa-map-marked-alt", "Map Interaction", "Explore maps with dynamic layers, feature context, and responsive tools.")
+                                +top-category("map-interaction", "fas fa-map-marked-alt", "Map & Interaction", "Explore maps, control layers and interact with its features.")
                                 +top-category("search-analysis", "fas fa-search", "Search & Analysis", "Find the right data quickly and turn it into useful insight.")
-                                +top-category("editing-workflows", "fas fa-pen", "Editing & Workflows", "Move from viewing to action with guided, browser-based workflows.")
-                                +top-category("printing-export", "fas fa-print", "Printing & Export", "Create polished outputs for delivery, reporting, and review.")
-                                +top-category("users-permissions", "fas fa-user-shield", "Users & Permissions", "Control access securely across maps, layers, tools, and services.")
-                                +top-category("advanced-capabilities", "fas fa-rocket", "Advanced Capabilities", "Extend the platform with more specialized GIS workflows.")
+                                +top-category("printing-export", "fas fa-print", "Print, Export & Share", "Export maps and content for publishing, reporting and sharing.")
+                                +top-category("editing-workflows", "fas fa-pen", "Editing & Workflows", "Edit features in-app or interact via third-party interfaces.")
+                                +top-category("editing-workflows", "fas fa-cube", "3D & Street View", "Visualize 3D scenes and street view imagery.")
+                                +top-category("users-permissions", "fas fa-user-shield", "Users & Access Management", "Control access to maps, layers, tools, and services.")
+                                +top-category("advanced-capabilities", "fas fa-rocket", "Configure, Customize & Extends", "Tailor and extend the application to your requirements.")
                             a(class="discover-more", href="#map-interaction")
                                 p(class="discover-more-text") Discover more
                                 span(class="discover-more-arrow", aria-hidden="true") ↓
@@ -82,22 +83,25 @@ html(lang="en")
                                     div(class="map-shell-icon")
                                         i(class="fas fa-map-marked-alt")
                                     div
-                                        h2(class="capability-title") Map Interaction
-                                        p(class="capability-desc") Everything users need to understand spatial data quickly in the browser, from map context to feature detail and on-map interaction.
+                                        h2(class="capability-title") Map & Interaction
+                                        p(class="capability-desc") Everything users need to visualize spatial data in the browser, from navigation, layer control to context information.
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("Dynamic Layers", "Explore spatial content with clear map context and live layer visibility.", [{icon: "fas fa-layer-group", text: "Dynamic layers"}, {icon: "fas fa-list", text: "Legend"}, {icon: "fas fa-map", text: "Map context"}])
-                                    +mini-card("Feature Inspection", "Inspect selected data directly in the interface without breaking the workflow.", [{icon: "fas fa-circle-info", text: "Feature info"}, {icon: "fas fa-table", text: "Attribute tables"}, {icon: "fas fa-magnifying-glass", text: "Data inspection"}])
-                                    +mini-card("Drawing Tools", "Work directly on top of the map with practical tools for review and markup.", [{icon: "fas fa-ruler", text: "Measurement"}, {icon: "fas fa-pen-ruler", text: "Drawing"}, {icon: "fas fa-pencil", text: "Redlining"}])
-                                    +mini-card("Layer Comparison", "Compare content and bring in external services such as WMS, WFS, and similar standards.", [{icon: "fas fa-code-compare", text: "Layer comparison"}, {icon: "fas fa-plug", text: "WMS / WFS"}, {icon: "fas fa-globe", text: "External services"}])
-                                    +mini-card("Responsive Design", "Keep the same core experience across larger screens, tablets, and phones.", [{icon: "fas fa-desktop", text: "Desktop"}, {icon: "fas fa-tablet-screen-button", text: "Tablet"}, {icon: "fas fa-mobile-screen-button", text: "Mobile"}])
+                                    +mini-card("Thematic Views", "Publish QGIS projects as thematic maps.", [{icon: "fas fa-repeat", text: "Theme switcher"}, {icon: "fas fa-house", text: "Landing page"}, {icon: "fas fa-compass", text: "Exploration"}])
+                                    +mini-card("Layer Control", "Adjust the visibility, opacity and render order of displayed layers.", [{icon: "fas fa-layer-group", text: "Layer tree"}, {icon: "fas fa-list", text: "Legend"}, {icon: "fas fa-code-compare", text: "Compare layers"}])
+                                    +mini-card("Context information", "Query and display information and attributes of layers, features and map locations.", [{icon: "fas fa-circle-info", text: "Theme and layer metadata"}, {icon: "fas fa-arrow-pointer", text: "Feature info"}, {icon: "fas fa-map-pin", text: "Map context info"}])
+                                    +mini-card("Drawing  & Analysis ", "Work directly on top of the map with practical markup and analysis tools.", [{icon: "fas fa-ruler", text: "Measurement"}, {icon: "fas fa-pen-ruler", text: "Drawing"}, {icon: "fas fa-chart-line", text: "Height profile"}])
+                                    +mini-card("Import geodata", "Add layer from external services such as WMS, WFS, as well as file based formats.", [{icon: "fas fa-globe", text: "WMS / WFS"}, {icon: "fas fa-file", text: "GeoJSON / KML / SHP"}, {icon: "fas fa-book-open", text: "Layer catalog"}])
+                                    +mini-card("Responsive & Accessible", "Adaptable and accessible user interface.", [{icon: "fas fa-desktop", text: "Desktop"}, {icon: "fas fa-mobile-screen-button", text: "Mobile/Tablet"}, {icon: "fas fa-keyboard", text: "Keyboard navigation"}])
 
                                     div(class="showcase-stage")
                                         button(class="showcase-arrow is-left", type="button", data-carousel-target="map-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
                                         div(id="map-showcase", class="showcase-track")
-                                            +showcase-shot("images/features/qwc-und-qwc-services-1.png", "Layer tree and live legend", "Layers & Legend")
-                                            +showcase-shot("images/features/datenabfragen-1.png", "Feature details and map context", "Feature Information")
-                                            +showcase-shot("images/features/mess-und-zeichnungswerkzeuge-1.png", "Drawing and measuring tools", "Drawing & Measuring")
+                                            +showcase-shot("images/features/theme-switcher-1.png", "Theme Switcher", "Theme Switcher")
+                                            +showcase-shot("images/features/qwc-und-qwc-services-1.png", "Map and layerstree", "Map & Layers")
+                                            +showcase-shot("images/features/feature-map-info-1.png", "Feature and Map information", "Feature & Map Info")
+                                            +showcase-shot("images/features/redlining-1.png", "Drawing tools", "Drawing")
+                                            +showcase-shot("images/features/measure-1.png", "Measure and height profile", "Measure & Height Profile")
                                         button(class="showcase-arrow is-right", type="button", data-carousel-target="map-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
                     section(class="capability-section is-tinted", id="search-analysis")
@@ -108,22 +112,51 @@ html(lang="en")
                                         i(class="fas fa-search")
                                     div
                                         h2(class="capability-title") Search & Analysis
-                                        p(class="capability-desc") Help users move from question to answer with less friction, whether they are searching by text, attributes, or spatial context.
+                                        p(class="capability-desc") Help users move from question to answer, whether they are searching by text, attributes, or spatial context.
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("Unified Search", "Find relevant places, records, and objects quickly across different data sources.", [{icon: "fas fa-font", text: "Full-text search"}, {icon: "fas fa-filter", text: "Attribute search"}, {icon: "fas fa-bolt", text: "Fast discovery"}])
-                                    +mini-card("Search Providers", "Connect internal and external providers so search works for real operational contexts.", [{icon: "fas fa-location-dot", text: "Geocoding"}, {icon: "fas fa-plug", text: "External providers"}, {icon: "fas fa-sliders", text: "Flexible setup"}])
-                                    +mini-card("Smart Filtering", "Refine the visible data without leaving the map or breaking the workflow.", [{icon: "fas fa-filter-circle-xmark", text: "Filters"}, {icon: "fas fa-code", text: "Queries"}, {icon: "fas fa-map-location-dot", text: "Map-linked results"}])
-                                    +mini-card("Thematic Views", "Make patterns easier to understand through thematic views and focused exploration.", [{icon: "fas fa-palette", text: "Themes"}, {icon: "fas fa-chart-column", text: "Data patterns"}, {icon: "fas fa-compass", text: "Exploration"}])
-                                    +mini-card("Time Views", "Compare changing datasets across time inside the same product experience.", [{icon: "fas fa-clock", text: "Temporal data"}, {icon: "fas fa-timeline", text: "Time slider"}, {icon: "fas fa-repeat", text: "Comparison"}])
+                                    +mini-card("Unified Search", "Find relevant places, objects, layers and map tools quickly through a unified search field.", [{icon: "fas fa-font", text: "Full-text search"}, {icon: "fas fa-filter", text: "Attribute search"}, {icon: "fas fa-bolt", text: "Fast discovery"}])
+                                    +mini-card("Search Providers", "Integrate search providers and provide results for real operational contexts.", [{icon: "fas fa-location-dot", text: "Geocoding"}, {icon: "fas fa-plug", text: "External providers"}, {icon: "fas fa-sliders", text: "Flexible setup"}])
+                                    +mini-card("QGIS Feature Search", "Set up flexible forms to search in QGIS project data sources.", [{icon: "fas fa-align-justify", text: "Search forms"}, {icon: "fas fa-code", text: "Search expressions"}, {icon: "fas fa-arrow-up-right-from-square", text: "Export results"}])
+                                    +mini-card("Map Filtering", "Dynamically apply spatial or attribute filtering to the map content.", [{icon: "fas fa-code", text: "Attribute filters"}, {icon: "fas fa-map-location-dot", text: "Spatial filters"}, {icon: "fas fa-clock", text: "Temporal filters"}])
+                                    +mini-card("Routing", "Display optimal routes and isochrones directly on the map.", [{icon: "fas fa-route", text: "Routes"}, {icon: "fas fa-circle-nodes", text: "Isochrones"}, {icon: "fas fa-plug", text: "Valhalla routing"}])
+                                    +mini-card("Time Manager", "Display timeline of temporal datasets and explore the map at specific points in time.", [{icon: "fas fa-clock", text: "Temporal data"}, {icon: "fas fa-timeline", text: "Time slider"}, {icon: "fas fa-repeat", text: "Comparison"}])
 
                                     div(class="showcase-stage")
                                         button(class="showcase-arrow is-left", type="button", data-carousel-target="search-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
                                         div(id="search-showcase", class="showcase-track")
-                                            +showcase-shot("images/features/suche-1.png", "Search interface and results", "Unified Search")
-                                            +showcase-shot("images/features/datenabfragen-3.png", "Filtered table and map results", "Filtering & Querying")
-                                            +showcase-shot("images/features/time-manager-1.png", "Temporal visualization tools", "Time-Based Views")
-                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="search-showcase", data-carousel-dir="right", aria-label="Scroll right") →
+                                            +showcase-shot("images/features/search-1.png", "Search interface and results", "Unified Search")
+                                            +showcase-shot("images/features/feature-search-1.png", "Feature search", "Feature Search")
+                                            +showcase-shot("images/features/map-filter-1.png", "Map filter", "Map Filter")
+                                            +showcase-shot("images/features/routing-1.png", "Routing", "Routing")
+                                            +showcase-shot("images/features/time-manager-1.png", "Temporal visualization tools", "Time Manager")
+                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="search-showcase", data-carousel-dir="right", aria-label="Scroll right")
+
+                    section(class="capability-section is-tinted", id="printing-export")
+                        div(class="container")
+                            div(class="map-shell")
+                                div(class="map-shell-head")
+                                    div(class="map-shell-icon")
+                                        i(class="fas fa-print")
+                                    div
+                                        h2(class="capability-title") Print, Export and Share
+                                        p(class="capability-desc") Export your maps and content into various output formats for publishing, reporting and data exchange.
+
+                                div(class="columns is-multiline is-variable is-5 map-mini-grid")
+                                    +mini-card("Map Printing", "Generate clean, presentation-ready map outputs from layouts prepared in QGIS.", [{icon: "fas fa-print", text: "QGIS layouts"}, {icon: "fas fa-file-pdf", text: "PDF and Geo-PDF output"}, {icon: "fas fa-star", text: "Print quality"}])
+                                    +mini-card("Batch Printing", "Create multi-page atlas or poster PDFs.", [{icon: "fas fa-copy", text: "Batch printing"}, {icon: "fas fa-book-atlas", text: "Atlas"}, {icon: "fas fa-clone", text: "Series print"}])
+                                    +mini-card("Export", "Export map images and feature data for your downstream GIS or office needs.", [{icon: "fas fa-file-export", text: "DXF / GeoJSON"}, {icon: "fas fa-image", text: "Raster"}, {icon: "fas fa-shapes", text: "Custom formats"}])
+                                    +mini-card("Feature Reports", "Produce reports and data visualizations in multiple formats from custom templates.", [{icon: "fas fa-chart-area", text: "Reporting tools"}, {icon: "fas fa-layer-group", text: "Documents Templates"}])
+                                    +mini-card("Bookmarks & Permalinks", "Save and share your work with other QWC users.", [{icon: "fas fa-link", text: "Compact permalinks"}, {icon: "fas fa-bookmark", text: "User bookmarks"}])
+
+                                    div(class="showcase-stage")
+                                        button(class="showcase-arrow is-left", type="button", data-carousel-target="printing-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
+                                        div(id="printing-showcase", class="showcase-track")
+                                            +showcase-shot("images/features/printing-1.png", "Print", "PDF Print")
+                                            +showcase-shot("images/features/atlas-print-1.png", "Atlas printing", "Atlas Print")
+                                            +showcase-shot("images/features/map-export-1.png", "Map export", "Map Export")
+                                            +showcase-shot("images/features/reports-1.png", "Feature reports", "Feature reports")
+                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="printing-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
                     section(class="capability-section", id="editing-workflows")
                         div(class="container")
@@ -133,47 +166,45 @@ html(lang="en")
                                         i(class="fas fa-pen")
                                     div
                                         h2(class="capability-title") Editing & Workflows
-                                        p(class="capability-desc") Move from viewing to action in the same interface with guided editing, validation, and workflow-oriented data handling.
+                                        p(class="capability-desc") Edit objects directly within the application or through interfaces to third-party applications.
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("Web Editing", "Edit geometry and attributes directly in the browser on top of robust backend workflows.", [{icon: "fas fa-pen-to-square", text: "Web editing"}, {icon: "fas fa-database", text: "PostGIS"}, {icon: "fas fa-diagram-project", text: "Operational workflows"}])
-                                    +mini-card("Guided Forms", "Reduce errors through structured forms that follow project rules and data logic.", [{icon: "fas fa-table-list", text: "Forms"}, {icon: "fas fa-shield-halved", text: "Validation"}, {icon: "fas fa-lock", text: "Constraints"}])
-                                    +mini-card("Bulk Operations", "Handle larger volumes of data efficiently through connected table-based workflows.", [{icon: "fas fa-table", text: "Attribute tables"}, {icon: "fas fa-layer-group", text: "Bulk actions"}, {icon: "fas fa-arrows-rotate", text: "Batch updates"}])
-                                    +mini-card("Data Exchange", "Move information in and out through common formats that fit everyday GIS tasks.", [{icon: "fas fa-file-csv", text: "CSV"}, {icon: "fas fa-clipboard", text: "Clipboard"}, {icon: "fas fa-file-export", text: "DXF / raster"}])
-                                    +mini-card("Complex Workflows", "Adapt the client to domain-specific applications and more advanced editing processes.", [{icon: "fas fa-sitemap", text: "Domain apps"}, {icon: "fas fa-gears", text: "Workflow support"}, {icon: "fas fa-puzzle-piece", text: "Custom logic"}])
+                                    +mini-card("Web Editing", "Edit PostGIS feature geometries and attributes directly in the browser using a dedicated backend service.", [{icon: "fas fa-pen-to-square", text: "Edit geometry and attributes"}, {icon: "fas fa-file-arrow-up", text: "File uploads"}, {icon: "fas fa-diagram-project", text: "1:N relations"}])
+                                    +mini-card("Advanced Edit Forms", "Your QGIS edit forms and field configurations—seamlessly transformed into web forms.", [{icon: "fas fa-table-list", text: "QGIS edit forms"}, {icon: "fas fa-calculator", text: "Virtual fields"}, {icon: "fas fa-code", text: "Expressions and constraints"}])
+                                    +mini-card("Attribute Table", "Efficiently display, filter edit and export attributes of entire datasets.", [{icon: "fas fa-table", text: "Attribute table"}, {icon: "fas fa-layer-group", text: "Bulk actions"}, {icon: "fas fa-file-export", text: "CSV Export"}])
+                                    +mini-card("Third-party interfacing", "Interface with third-party application for taylored workflows.", [{icon: "fas fa-pen", text: "Geometry Digitizer"}, {icon: "fas fa-arrows-left-right-to-line", text: "CCC Interface"},{icon: "fas fa-server", text: "Custom edit backends"}])
 
                                     div(class="showcase-stage")
                                         button(class="showcase-arrow is-left", type="button", data-carousel-target="editing-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
                                         div(id="editing-showcase", class="showcase-track")
-                                            +showcase-shot("images/features/qwc-und-qwc-services-1.png", "Editing in the map interface", "Web Editing")
-                                            +showcase-shot("images/features/editieren-erweiterte-funktionen-1.png", "Editing form and geometry tools", "Guided Forms")
-                                            +showcase-shot("images/features/datenabfragen-3.png", "Attribute table operations", "Bulk Operations")
+                                            +showcase-shot("images/features/editing-1.png", "Edit forms", "Edit Forms")
+                                            +showcase-shot("images/features/attribute-table-1.png", "Attribute table", "Attribute Table")
+                                            +showcase-shot("images/features/geom-digitizer-1.png", "Geometry digitizer", "Geometry Digitizer")
                                         button(class="showcase-arrow is-right", type="button", data-carousel-target="editing-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
-                    section(class="capability-section is-tinted", id="printing-export")
+                    section(class="capability-section", id="views")
                         div(class="container")
                             div(class="map-shell")
                                 div(class="map-shell-head")
                                     div(class="map-shell-icon")
-                                        i(class="fas fa-print")
+                                        i(class="fas fa-cube")
                                     div
-                                        h2(class="capability-title") Printing & Export
-                                        p(class="capability-desc") Turn browser-based GIS work into polished outputs that are ready for review, reporting, and operational delivery.
+                                        h2(class="capability-title") 3D & Street View
+                                        p(class="capability-desc") Add an additional dimension to your maps with powerful integrated 3D and street imagery viewers!
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("PDF Printing", "Generate clean, presentation-ready map outputs from layouts prepared in QGIS.", [{icon: "fas fa-file-pdf", text: "PDF output"}, {icon: "fas fa-print", text: "QGIS layouts"}, {icon: "fas fa-star", text: "Print quality"}])
-                                    +mini-card("Batch Reports", "Support repeatable output production for records, reports, and operational series.", [{icon: "fas fa-copy", text: "Batch printing"}, {icon: "fas fa-file-lines", text: "Reporting"}, {icon: "fas fa-list-check", text: "Series output"}])
-                                    +mini-card("Flexible Export", "Offer flexible exports depending on the downstream GIS or office need.", [{icon: "fas fa-file-export", text: "DXF"}, {icon: "fas fa-image", text: "Raster"}, {icon: "fas fa-shapes", text: "Custom formats"}])
-                                    +mini-card("Print Workflows", "Keep output logic consistent so teams can repeat the same work reliably.", [{icon: "fas fa-repeat", text: "Consistency"}, {icon: "fas fa-layer-group", text: "Templates"}, {icon: "fas fa-check-double", text: "Repeatability"}])
-                                    +mini-card("Reporting Tools", "Connect maps and data outputs with broader reporting workflows when needed.", [{icon: "fas fa-plug", text: "Reporting tools"}, {icon: "fas fa-file-word", text: "Documents"}, {icon: "fas fa-box-open", text: "Deliverables"}])
+                                    +mini-card("3D View", "Discover the powerful 3D view, based on Three.js and Giro 3D, to display your 3D Tiles and GLTF datasets.", [{icon: "fas fa-mountain", text: "Terrain"}, {icon: "fas fa-cube", text: "3D Tiles"}, {icon: "fas fa-layer-group", text: "Draped 2D layers"}])
+                                    +mini-card("3D Tools", "Taylored tools for urban planning.", [{icon: "fas fa-cubes", text: "Draw 3D shapes"}, {icon: "fas fa-sun", text: "Simulate shadows"},{icon: "fas fa-eye", text: "Hide existing buildings"}, {icon: "fas fa-person", text: "First person view"}])
+                                    +mini-card("Oblique view", "Display oblique satellite imagery, using a dedicated tiled image server.", [{icon: "fas fa-compass", text: "Four-direction oblique imagery"}, {icon: "fas fa-arrow-right-arrow-left", text: "Couple with 2D view"}, {icon: "fas fa-image", text: "Background layer"}])
+                                    +mini-card("Street view", "Display 3D panorama images at available locations with the Cyclomedia/Panoramax views.", [{icon: "fas fa-street-view", text: "Street level imagery"}, {icon: "fas fa-location-dot", text: "Track position in 2D view"}, {icon: "fas fa-screwdriver-wrench", text: "Specialized tools"}])
 
                                     div(class="showcase-stage")
-                                        button(class="showcase-arrow is-left", type="button", data-carousel-target="printing-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
-                                        div(id="printing-showcase", class="showcase-track")
-                                            +showcase-shot("images/features/drucken-export-1.png", "Print layout preview", "Layout Printing")
-                                            +showcase-shot("images/features/berichte-1.png", "Report generation workflow", "Batch Reporting")
-                                            +showcase-shot("images/features/plugin-api-1.png", "Export options panel", "Export Options")
-                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="printing-showcase", data-carousel-dir="right", aria-label="Scroll right") →
+                                        button(class="showcase-arrow is-left", type="button", data-carousel-target="permissions-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
+                                        div(id="permissions-showcase", class="showcase-track")
+                                            +showcase-shot("images/features/3d-viewer-1.png", "3D Viewer", "3D Viewer")
+                                            +showcase-shot("images/features/oblique-view-1.png", "Oblique view configuration", "Oblique View")
+                                            +showcase-shot("images/features/panoramax-1.png", "Panoramax street view", "Panoramax Street View")
+                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="permissions-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
                     section(class="capability-section", id="users-permissions")
                         div(class="container")
@@ -182,22 +213,22 @@ html(lang="en")
                                     div(class="map-shell-icon")
                                         i(class="fas fa-user-shield")
                                     div
-                                        h2(class="capability-title") Users & Permissions
+                                        h2(class="capability-title") Users & Access Management
                                         p(class="capability-desc") Keep access control understandable for administrators and seamless for users across maps, data, and services.
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("Access Control", "Control visibility and actions across maps, layers, attributes, and tools.", [{icon: "fas fa-map", text: "Maps"}, {icon: "fas fa-layer-group", text: "Layers"}, {icon: "fas fa-sliders", text: "Attributes / tools"}])
-                                    +mini-card("Role Permissions", "Make permissions manageable by assigning clear capabilities to each role.", [{icon: "fas fa-users", text: "Roles"}, {icon: "fas fa-key", text: "Permissions"}, {icon: "fas fa-scale-balanced", text: "Governance"}])
-                                    +mini-card("Auth Integration", "Connect existing identity systems instead of reinventing user access.", [{icon: "fas fa-id-badge", text: "OIDC"}, {icon: "fas fa-network-wired", text: "LDAP"}, {icon: "fas fa-database", text: "Database auth"}])
-                                    +mini-card("Secure Services", "Expose the right services to the right users without losing standards support.", [{icon: "fas fa-globe", text: "OGC"}, {icon: "fas fa-shield-halved", text: "Protected services"}, {icon: "fas fa-lock", text: "Controlled access"}])
-                                    +mini-card("User Experience", "Keep permission logic strong in the backend while the frontend stays clean and simple.", [{icon: "fas fa-shield", text: "Security"}, {icon: "fas fa-hand-pointer", text: "Usability"}, {icon: "fas fa-check-double", text: "Consistency"}])
+                                    +mini-card("Access Control", "Fine-grained access management for restricting access to maps, layers, attributes and many other resource types", [{icon: "fas fa-map", text: "Maps"}, {icon: "fas fa-layer-group", text: "Layers"}, {icon: "fas fa-sliders", text: "Attributes"}])
+                                    +mini-card("Roles", "Manage permissions by assigning permissions to specific roles, which can consist of multiple users and groups.", [{icon: "fas fa-user", text: "Users and groups"}, {icon: "fas fa-users", text: "Roles"}, {icon: "fas fa-key", text: "Permissions"}])
+                                    +mini-card("Auth Integration", "Choose the authentication provider best suited to your environment.", [{icon: "fas fa-database", text: "User Database"}, {icon: "fas fa-id-badge", text: "OIDC"}, {icon: "fas fa-network-wired", text: "LDAP"}])
+                                    +mini-card("Secure Services", "Expose filtered OGC web services with optional Basic-Auth authentication.", [{icon: "fas fa-globe", text: "OGC Services"}, {icon: "fas fa-shield-halved", text: "Protected services"}, {icon: "fas fa-lock", text: "Controlled access"}])
+                                    +mini-card("Admin Backend", "Manage users and permission through a dedicated administration backend.", [{icon: "fas fa-globe", text: "Web backend"}, {icon: "fas fa-envelope", text: "Invite users"}, {icon: "fas fa-check-double", text: "Consistency"}])
 
                                     div(class="showcase-stage")
                                         button(class="showcase-arrow is-left", type="button", data-carousel-target="permissions-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
                                         div(id="permissions-showcase", class="showcase-track")
-                                            +showcase-shot("images/features/user-und-zugriffsmanagement-2.png", "Role and access management", "Role-Based Access")
-                                            +showcase-shot("images/features/agdi-admin-ui-2.png", "Authentication configuration", "Authentication Integration")
-                                            +showcase-shot("images/features/qwc-und-qwc-services-1.png", "Protected services and restricted data", "Secure Service Access")
+                                            +showcase-shot("images/features/admin-gui-1.png", "User management", "User Management")
+                                            +showcase-shot("images/features/admin-gui-2.png", "Resources and permissions", "Resources & Permissions")
+                                            +showcase-shot("images/features/ogc-service-1.png", "OGC Services", "OGC Services")
                                         button(class="showcase-arrow is-right", type="button", data-carousel-target="permissions-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
                     section(class="capability-section is-tinted", id="advanced-capabilities")
@@ -207,22 +238,23 @@ html(lang="en")
                                     div(class="map-shell-icon")
                                         i(class="fas fa-rocket")
                                     div
-                                        h2(class="capability-title") Advanced Capabilities
-                                        p(class="capability-desc") Extend the platform with more specialized GIS functionality without losing the feel of one coherent product.
+                                        h2(class="capability-title") Configure, Customize & Extend
+                                        p(class="capability-desc") Customize QWC and extend it with custom modules to create the perfect application taylored to your requirements!
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("3D Analysis", "Add stronger spatial context through 3D views and terrain-aware exploration.", [{icon: "fas fa-cube", text: "3D"}, {icon: "fas fa-mountain", text: "Terrain"}, {icon: "fas fa-location-crosshairs", text: "Spatial context"}])
-                                    +mini-card("Routing Analysis", "Support network-based workflows for directions, service areas, and accessibility needs.", [{icon: "fas fa-route", text: "Routing"}, {icon: "fas fa-universal-access", text: "Accessibility"}, {icon: "fas fa-circle-nodes", text: "Service areas"}])
-                                    +mini-card("Street Imagery", "Combine map data with ground-level visual context for validation and planning.", [{icon: "fas fa-camera", text: "Street imagery"}, {icon: "fas fa-check", text: "Validation"}, {icon: "fas fa-binoculars", text: "Context"}])
-                                    +mini-card("Time Exploration", "Compare changing datasets across time without leaving the main experience.", [{icon: "fas fa-clock", text: "Temporal data"}, {icon: "fas fa-sliders", text: "Time controls"}, {icon: "fas fa-arrows-rotate", text: "Comparison"}])
-                                    +mini-card("Custom Tools", "Adapt the platform to project-specific analysis needs when standard tools are not enough.", [{icon: "fas fa-screwdriver-wrench", text: "Custom tools"}, {icon: "fas fa-puzzle-piece", text: "Extensions"}, {icon: "fas fa-flask", text: "Specialized workflows"}])
+                                    +mini-card("Functionality & Appearance", "QWC is built as modular application which can easily customized to your needs.", [{icon: "fas fa-sliders", text: "Plugin configuration"}, {icon: "fas fa-palette", text: "Color scheme & custom CSS"}, {icon: "fas fa-star", text: "Logo"}])
+                                    +mini-card("Localization", "QWC can be fully localized and numerous application translations out of the box!", [{icon: "fas fa-language", text: "UI translations"}, {icon: "fas fa-file", text: "Translated QGIS projects"}])
+                                    +mini-card("Integration", "Integrate QWC into and control it from a parent website.", [{icon: "fas fa-link", text: "URL parameters"}, {icon: "fas fa-arrows-left-right-to-line", text: "API"}])
+                                    +mini-card("Custom plugins", "Add custom plugins to a tailored custom build or the standard app via the API.", [])
+                                    +mini-card("Multi-tenancy", "Ship separate of flavours of the application from a single deployment.", [])
 
                                     div(class="showcase-stage")
                                         button(class="showcase-arrow is-left", type="button", data-carousel-target="advanced-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
                                         div(id="advanced-showcase", class="showcase-track")
-                                            +showcase-shot("images/features/3d-viewer-und-analyse-funktionen-1.png", "3D terrain and analysis view", "3D & Terrain")
-                                            +showcase-shot("images/features/option-routing-1.png", "Routing analysis results", "Routing")
-                                            +showcase-shot("images/features/oereb-integration.png", "Cadastre of public-law restrictions on landownership (PLR Cadastre)", "Cadastre integration")
+                                            +showcase-shot("images/features/settings-1.png", "Language and appearance", "Language & Appearance")
+                                            +showcase-shot("images/features/custom-css-1.png", "Custom CSS", "Custom CSS")
+                                            +showcase-shot("images/features/config-1.png", "Plugin configuration", "Plugin configuration")
+                                            +showcase-shot("images/features/api-1.png", "API", "API")
                                         button(class="showcase-arrow is-right", type="button", data-carousel-target="advanced-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
             include includes/footer.pug
