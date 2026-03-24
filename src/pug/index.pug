@@ -1,3 +1,14 @@
+mixin main-feature(title, text)
+    div(class="is-flex is-align-items-start")
+        span(class="mr-4")
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
+                path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+        div
+            h6(class="mb-3 has-text-weight-bold is-size-4")=title
+            p(class="subtitle")=text
+            p
+
 mixin trust-feature(title, text)
     div(class="column is-12 is-4-desktop")
         div(class="trust-feature")
@@ -69,9 +80,9 @@ html(lang="en")
                         div(class="column is-12 is-5-desktop mb-10 mb-0-desktop")
                             div(class="has-mw-md-desktop")
                                 span(class="tag is-warning") Why QWC
-                                h3(class="my-6 title is-size-3 is-spaced") Built for modern web GIS
+                                h3(class="my-6 title is-size-3 is-spaced") Bringing QGIS to the web
                                 p(class="has-mw-sm-desktop subtitle")
-                                    | QWC is an open source web GIS platform built on the QGIS ecosystem, combining usability, extensibility and modern web technologies.
+                                    | QWC is an open source web GIS platform bringing QGIS functionality to the web, combining usability, extensibility and modern web technologies.
 
                         div(class="column is-12 is-7-desktop")
                             div(class="columns is-multiline")
@@ -81,8 +92,8 @@ html(lang="en")
                                             path(d="M14 40H40", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M8 40V34L34 8L40 14L14 40H8Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M34 20L28 14", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    h6(class="mt-8 mb-4 is-size-4") Official QGIS Project
-                                    p(class="subtitle") Part of the QGIS ecosystem, ensuring compatibility, stability and long-term relevance.
+                                    h6(class="mt-8 mb-4 is-size-4") Native QGIS support
+                                    p(class="subtitle") Full support of cartographic QGIS features and extended functionality.
 
                                 div(class="column is-12 is-6-desktop mb-10")
                                     span
@@ -98,8 +109,8 @@ html(lang="en")
                                         svg(xmlns="http://www.w3.org/2000/svg", width="48", height="48", viewbox="0 0 48 48", fill="none")
                                             path(d="M24 44C24 44 40 36 40 24V10L24 4L8 10V24C8 36 24 44 24 44Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
                                             path(d="M16 23L22 29L34 17", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    h6(class="mt-8 mb-4 is-size-4") Focus on Usability
-                                    p(class="subtitle") Built with clarity and intuitive workflows in mind.
+                                    h6(class="mt-8 mb-4 is-size-4") Advanced functionality
+                                    p(class="subtitle") Advanced editing tools in 2D and 3D, full-text search, printing and more.
 
                                 div(class="column is-12 is-6-desktop")
                                     span
@@ -121,33 +132,13 @@ html(lang="en")
 
                         div(class="column is-12 is-5-desktop")
                             div(class="has-mw-md-desktop mx-auto")
-                                h3(class="mb-14 title is-size-3 is-spaced") Built to evolve
-                                div(class="mb-6 is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 3 12 3Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") First introduced in Switzerland
-                                        p(class="subtitle") QWC1 was introduced in Uster in 2009 as an early web GIS solution built around QGIS.
+                                h3(class="mb-14 title is-size-3 is-spaced") Modern architecture
 
-                                div(class="mb-6 is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") Modern generation since 2016
-                                        p(class="subtitle") QWC2 introduced a modern, responsive interface and a more extensible architecture.
+                                +main-feature("Micro services", "Backend services for editing, search, etc. based on flexible and extensible micro service architecture.")
 
-                                div(class="is-flex is-align-items-start")
-                                    span(class="mr-4")
-                                        svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewbox="0 0 24 24", fill="none")
-                                            path(d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                            path(d="M8 11.5L11 14.5L17 8.5", stroke="#006251", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
-                                    div
-                                        h6(class="mb-3 has-text-weight-bold is-size-4") Continuously improved
-                                        p(class="subtitle") QWC continues to evolve through open source collaboration and professional maintenance.
+                                +main-feature("Best-in-class frontend technology", "Based on ReactJS, OpenLayers and ThreeJS for advanced 2D and 3D mapping.")
+
+                                +main-feature("Extension API", "Plugin system for custom extensions with extensive JavaScript and WebSocket APIs.")
 
             section(class="section trust-section")
                 div(class="container")
@@ -161,13 +152,13 @@ html(lang="en")
                         //- FEATURES GRID
                         div(class="columns is-multiline is-variable is-6 trust-grid")
 
-                            +trust-feature("Official QGIS ecosystem", "Developed within QGIS, ensuring long-term compatibility and stability.")
+                            +trust-feature("Part of QGIS ecosystem", "Developed within QGIS organisation, ensuring long-term compatibility and stability.")
 
-                            +trust-feature("Scalablity", "Scale from single service setup to Kubernetes deployment with Enterprise SSO support.")
+                            +trust-feature("Scalability", "Scale from single server setup to Kubernetes deployment.")
 
-                            +trust-feature("Modern technologies", "Built with ReactJS and OpenLayers for performance and flexibility.")
+                            +trust-feature("Multitenant setup", "Provide customized frontends for multiple users and organizations.")
 
-                            +trust-feature("Designed for usability", "A clean and responsive interface focused on real workflows.")
+                            +trust-feature("Enterprise ready", "Role based access control (RBAC) and Single Sign On (SSO) support.")
 
                             +trust-feature("Extensible architecture", "Plugin-based system for easy customization and extension.")
 
