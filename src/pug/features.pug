@@ -115,12 +115,12 @@ html(lang="en")
                                         p(class="capability-desc") Help users move from question to answer, whether they are searching by text, attributes, or spatial context.
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("Unified Search", "Find relevant places, objects, layers and map tools quickly through a unified search field.", [{icon: "fas fa-font", text: "Full-text search"}, {icon: "fas fa-filter", text: "Attribute search"}, {icon: "fas fa-bolt", text: "Fast discovery"}])
-                                    +mini-card("Search Providers", "Integrate search providers and provide results for real operational contexts.", [{icon: "fas fa-location-dot", text: "Geocoding"}, {icon: "fas fa-plug", text: "External providers"}, {icon: "fas fa-sliders", text: "Flexible setup"}])
+                                    +mini-card("Unified Search", "Query customizeable search providers to find places, objects, layers and map tools quickly through a unified search field.", [{icon: "fas fa-font", text: "Full-text search"}, {icon: "fas fa-plug", text: "Custom search providers"}, {icon: "fas fa-sliders", text: "Flexible setup"}])
                                     +mini-card("QGIS Feature Search", "Set up flexible forms to search in QGIS project data sources.", [{icon: "fas fa-align-justify", text: "Search forms"}, {icon: "fas fa-code", text: "Search expressions"}, {icon: "fas fa-arrow-up-right-from-square", text: "Export results"}])
                                     +mini-card("Map Filtering", "Dynamically apply spatial or attribute filtering to the map content.", [{icon: "fas fa-code", text: "Attribute filters"}, {icon: "fas fa-map-location-dot", text: "Spatial filters"}, {icon: "fas fa-clock", text: "Temporal filters"}])
                                     +mini-card("Routing", "Display optimal routes and isochrones directly on the map.", [{icon: "fas fa-route", text: "Routes"}, {icon: "fas fa-circle-nodes", text: "Isochrones"}, {icon: "fas fa-plug", text: "Valhalla routing"}])
                                     +mini-card("Time Manager", "Display timeline of temporal datasets and explore the map at specific points in time.", [{icon: "fas fa-clock", text: "Temporal data"}, {icon: "fas fa-timeline", text: "Time slider"}, {icon: "fas fa-repeat", text: "Comparison"}])
+                                    +mini-card("Sensors", "Query and display sensor data from SensorThings APIs.", [{icon: "fas fa-arrow-pointer", text: "Pick locations on map"}, {icon: "fas fa-chart-line", text: "Display multiple data streams"}, {icon: "fas fa-chart-column", text: "Compute statistics"}])
 
                                     div(class="showcase-stage")
                                         button(class="showcase-arrow is-left", type="button", data-carousel-target="search-showcase", data-carousel-dir="left", aria-label="Scroll left") ←
@@ -130,7 +130,8 @@ html(lang="en")
                                             +showcase-shot("images/features/map-filter-1.png", "Map filter", "Map Filter")
                                             +showcase-shot("images/features/routing-1.png", "Routing", "Routing")
                                             +showcase-shot("images/features/time-manager-1.png", "Temporal visualization tools", "Time Manager")
-                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="search-showcase", data-carousel-dir="right", aria-label="Scroll right")
+                                            +showcase-shot("images/features/sensors-1.png", "Sensors", "Sensors")
+                                        button(class="showcase-arrow is-right", type="button", data-carousel-target="search-showcase", data-carousel-dir="right", aria-label="Scroll right") →
 
                     section(class="capability-section is-tinted", id="printing-export")
                         div(class="container")
@@ -217,7 +218,7 @@ html(lang="en")
                                         p(class="capability-desc") Keep access control understandable for administrators and seamless for users across maps, data, and services.
 
                                 div(class="columns is-multiline is-variable is-5 map-mini-grid")
-                                    +mini-card("Access Control", "Fine-grained access management for restricting access to maps, layers, attributes and many other resource types", [{icon: "fas fa-map", text: "Maps"}, {icon: "fas fa-layer-group", text: "Layers"}, {icon: "fas fa-sliders", text: "Attributes"}])
+                                    +mini-card("Access Control", "Fine-grained access management for restricting access to maps, layers, attributes and many other resource types.", [{icon: "fas fa-map", text: "Maps"}, {icon: "fas fa-layer-group", text: "Layers"}, {icon: "fas fa-sliders", text: "Attributes"}])
                                     +mini-card("Roles", "Manage permissions by assigning permissions to specific roles, which can consist of multiple users and groups.", [{icon: "fas fa-user", text: "Users and groups"}, {icon: "fas fa-users", text: "Roles"}, {icon: "fas fa-key", text: "Permissions"}])
                                     +mini-card("Auth Integration", "Choose the authentication provider best suited to your environment.", [{icon: "fas fa-database", text: "User Database"}, {icon: "fas fa-id-badge", text: "OIDC"}, {icon: "fas fa-network-wired", text: "LDAP"}])
                                     +mini-card("Secure Services", "Expose filtered OGC web services with optional Basic-Auth authentication.", [{icon: "fas fa-globe", text: "OGC Services"}, {icon: "fas fa-shield-halved", text: "Protected services"}, {icon: "fas fa-lock", text: "Controlled access"}])
