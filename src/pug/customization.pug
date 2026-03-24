@@ -1,21 +1,350 @@
-mixin application(img, alt, lable, title)
+mixin application(img, alt, lable, title, url)
     div(class="column is-12")
         div(class="case-study-card")
+            div(class="case-study-body")
+                span(class="case-study-meta", style="min-height:1.35rem; padding:0.08rem 0.42rem; font-size:0.52rem; letter-spacing:0.07em; text-transform:uppercase;")= lable
+                if url
+                    a(class="case-study-title-link", href=url, target="_blank", rel="noopener noreferrer")
+                        h3(class="case-study-title", style="font-size:clamp(2.15rem, 3vw, 2.7rem); line-height:0.94; letter-spacing:-0.045em; font-weight:900;")= title
+                        span(class="case-study-title-icon", aria-hidden="true")
+                            i(class="fas fa-arrow-up-right-from-square")
+                else
+                    h3(class="case-study-title", style="font-size:clamp(2.15rem, 3vw, 2.7rem); line-height:0.94; letter-spacing:-0.045em; font-weight:900;")= title
             div(class="case-study-image")
                 img(src=img, alt=alt)
-            div(class="case-study-body")
-                span(class="case-study-meta")= lable
-                h3(class="case-study-title")= title
-                p(class="case-study-text")
-                  if block
-                      block
+            div(class="case-study-content")
+                if block
+                    block
+
+mixin icon-point(icon, text)
+    li
+        span(class="icon case-study-point-icon")
+            i(class=icon)
+        span= text
 
 doctype html
 html(lang="en")
     head
         title QWC - Customization & Extensibility
         include includes/head.pug
-    body(class="page-with-fixed-navbar")
+        style.
+            .customization-page {
+                font-family: "DM Sans", sans-serif;
+            }
+            .customization-page h1,
+            .customization-page h2,
+            .customization-page h3,
+            .customization-page h4,
+            .customization-page .title,
+            .customization-page .custom-card-title,
+            .customization-page .case-study-title,
+            .customization-page .custom-value-title {
+                font-family: Poppins, sans-serif;
+            }
+            .customization-page #case-studies .custom-value-title {
+                font-size: clamp(2.7rem, 4.5vw, 3.7rem) !important;
+                line-height: 0.9 !important;
+                letter-spacing: -0.06em;
+                color: rgb(88, 150, 50) !important;
+                font-weight: 900 !important;
+                max-width: 10ch;
+                text-wrap: balance;
+                margin-bottom: 1.2rem !important;
+            }
+            .custom-value-text {
+                max-width: 50rem;
+                font-size: 1.12rem;
+                line-height: 1.8;
+                color: #607089;
+                margin-bottom: 0;
+            }
+            .custom-kicker {
+                background: none !important;
+                background-image: none !important;
+                background-color: transparent !important;
+                border: 0 !important;
+                color: #13212f !important;
+                font-family: Poppins, sans-serif !important;
+                font-size: clamp(2.7rem, 4.8vw, 3.95rem) !important;
+                line-height: 0.92 !important;
+                font-weight: 900 !important;
+                letter-spacing: -0.06em !important;
+                padding: 0 !important;
+                margin-bottom: 1.45rem !important;
+                text-transform: none !important;
+                box-shadow: none !important;
+                white-space: nowrap !important;
+            }
+            .custom-hero {
+                max-width: 900px;
+                margin: 0 auto 3.6rem;
+                text-align: center;
+            }
+            .custom-title {
+                font-size: clamp(1.14rem, 1.75vw, 1.55rem) !important;
+                line-height: 1.12 !important;
+                letter-spacing: -0.03em !important;
+                color: rgb(147, 176, 35) !important;
+                font-weight: 800 !important;
+                max-width: none;
+                margin: 0 auto 1.35rem !important;
+                text-wrap: normal;
+                white-space: nowrap !important;
+            }
+            .custom-subtitle {
+                max-width: 56rem !important;
+                margin: 2rem auto 0 !important;
+                color: #7a8797 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.68 !important;
+            }
+            .custom-grid {
+                margin-top: 3.6rem;
+                row-gap: 1.1rem;
+            }
+            .custom-card {
+                background: linear-gradient(180deg, #ffffff 0%, #fcfdfb 100%);
+                border: 1px solid rgba(88, 150, 50, 0.12);
+                border-radius: 1.6rem;
+                padding: 2rem 1.9rem 1.95rem;
+                height: 100%;
+                box-shadow: 0 16px 34px rgba(17, 24, 39, 0.06);
+                transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+            }
+            .custom-card:hover {
+                transform: translateY(-5px);
+                border-color: rgba(88, 150, 50, 0.22);
+                box-shadow: 0 24px 48px rgba(17, 24, 39, 0.1), 0 12px 28px rgba(88, 150, 50, 0.08);
+            }
+            .custom-card-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0;
+                padding: 0.13rem 0.46rem !important;
+                border-radius: 999px;
+                background: none !important;
+                background-image: none !important;
+                background-color: rgba(147, 176, 35, 0.16) !important;
+                border: 1px solid rgba(147, 176, 35, 0.28) !important;
+                color: rgb(88, 150, 50);
+                font-size: 0.54rem !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.08em !important;
+                text-transform: uppercase !important;
+                margin-bottom: 0.75rem !important;
+                line-height: 1.1 !important;
+            }
+            .custom-card-badge .icon {
+                width: 0.8rem !important;
+                height: 0.74rem !important;
+                color: rgb(238, 121, 19);
+                font-size: 0.58rem !important;
+                margin-right: 0.34rem !important;
+                flex: 0 0 auto;
+            }
+            .custom-card-title {
+                font-size: 1.56rem;
+                font-weight: 800;
+                color: #13212f;
+                line-height: 1.18;
+                letter-spacing: -0.03em;
+                margin-bottom: 0.8rem;
+            }
+            .custom-card-text {
+                color: #516376;
+                font-size: 0.95rem;
+                line-height: 1.72;
+                margin-bottom: 1.15rem;
+            }
+            .case-studies-grid {
+                margin-top: 3rem;
+            }
+            .custom-points {
+                margin: 0;
+                padding-left: 0 !important;
+                list-style: none !important;
+            }
+            .custom-points li {
+                position: relative;
+                padding-left: 1.7rem;
+                margin-bottom: 0.72rem;
+                color: #2d4258;
+                font-size: 0.92rem;
+                line-height: 1.58;
+            }
+            .custom-points li::before {
+                content: "\f138";
+                position: absolute;
+                top: 0.08rem;
+                left: 0;
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                color: rgb(238, 121, 19);
+                font-size: 0.9rem;
+                line-height: 1.3;
+            }
+            .case-study-card {
+                background: #ffffff;
+                border-radius: 2rem;
+                border: 1px solid rgba(88, 150, 50, 0.16);
+                box-shadow: 0 28px 56px rgba(88, 150, 50, 0.08), 0 18px 40px rgba(17, 24, 39, 0.07);
+                overflow: hidden;
+                height: 100%;
+                position: relative;
+            }
+            .case-study-body {
+                padding: 1.6rem 1.6rem 1rem;
+            }
+            .case-study-meta {
+                display: inline-flex;
+                align-items: center;
+                min-height: 1.35rem;
+                padding: 0.08rem 0.42rem;
+                border-radius: 999px;
+                border: 1px solid rgba(147, 176, 35, 0.28);
+                background: none !important;
+                background-image: none !important;
+                background-color: rgba(147, 176, 35, 0.16) !important;
+                color: rgb(88, 150, 50);
+                font-size: 0.52rem;
+                font-weight: 800;
+                letter-spacing: 0.07em;
+                text-transform: uppercase;
+            }
+            .case-study-title {
+                margin: 0.9rem 0 0;
+                font-size: clamp(2.9rem, 4vw, 3.7rem);
+                line-height: 0.88;
+                letter-spacing: -0.06em;
+                color: #13212f;
+                font-weight: 900;
+                text-wrap: balance;
+            }
+            .case-study-title-link {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.6rem;
+                margin-top: 0.8rem;
+                width: fit-content;
+                text-decoration: none;
+            }
+            .case-study-title-link .case-study-title {
+                margin: 0;
+                transition: color .18s ease;
+            }
+            .case-study-title-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 0.95rem;
+                height: 0.95rem;
+                border-radius: 0;
+                background: transparent;
+                border: 0;
+                color: rgb(88, 150, 50);
+                font-size: 0.58rem;
+                line-height: 1;
+                margin-top: 0.18rem;
+                transform: translateY(0);
+                transition: transform .18s ease, color .18s ease;
+            }
+            .case-study-title-link:hover .case-study-title {
+                color: rgb(88, 150, 50);
+            }
+            .case-study-title-link:hover .case-study-title-icon {
+                transform: translateY(-0.03rem);
+            }
+            .case-study-image {
+                padding: 0 3rem;
+            }
+            .case-study-image img {
+                display: block;
+                width: 88%;
+                margin: 0 auto;
+                height: 17.5rem;
+                object-fit: cover;
+                border-radius: 1.25rem;
+                border: 1px solid rgba(88, 150, 50, 0.12);
+                background: rgba(255, 255, 255, 0.72);
+            }
+            .case-study-content {
+                padding: 1.3rem 1.6rem 1.6rem;
+            }
+            .case-study-text {
+                margin: 0 0 1rem;
+                color: #5f7188;
+                line-height: 1.72;
+            }
+            .case-study-points {
+                margin: 0 0 1rem;
+                padding-left: 0 !important;
+                list-style: none !important;
+            }
+            .case-study-points li {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.7rem;
+                margin-bottom: 0.72rem;
+                color: #2d4258;
+                font-size: 0.92rem;
+                line-height: 1.58;
+            }
+            .case-study-point-icon {
+                width: 1.1rem;
+                height: 1.1rem;
+                color: rgb(238, 121, 19);
+                font-size: 0.9rem;
+                flex: 0 0 auto;
+                margin-top: 0.08rem;
+            }
+            @media (max-width: 768px) {
+                .customization-page #case-studies .custom-value-title {
+                    font-size: 2.2rem !important;
+                    line-height: 0.92 !important;
+                }
+                .case-study-body {
+                    padding: 1.15rem 1.15rem 0.9rem;
+                }
+                .case-study-title {
+                    font-size: 2.25rem;
+                    line-height: 0.92;
+                }
+                .custom-card-title {
+                    font-size: 1.38rem;
+                }
+                .case-study-image {
+                    padding: 0 1.55rem;
+                }
+                .case-study-image img {
+                    height: 13.5rem;
+                }
+                .case-study-content {
+                    padding: 1rem 1.15rem 1.2rem;
+                }
+                .custom-card {
+                    padding: 1.5rem 1.2rem 1.35rem;
+                }
+                .custom-card-title {
+                    font-size: 1.26rem;
+                }
+                .custom-title {
+                    font-size: 1rem !important;
+                    line-height: 1.14 !important;
+                    white-space: normal !important;
+                    max-width: 21ch;
+                }
+                .custom-subtitle {
+                    font-size: 0.88rem !important;
+                    line-height: 1.68 !important;
+                    max-width: 32rem !important;
+                }
+                .custom-kicker {
+                    font-size: 2.2rem !important;
+                    line-height: 0.95 !important;
+                    white-space: normal !important;
+                }
+            }
+    body(class="page-with-fixed-navbar customization-page")
         div(class="")
             nav(class="navbar site-navbar has-background-white py-5")
                 div(class="container is-fluid")
@@ -42,8 +371,11 @@ html(lang="en")
                     div(class="columns is-multiline is-variable is-5 custom-grid", id="what-you-can-build")
                         div(class="column is-12 is-6-desktop")
                             div(class="custom-card")
-                                span(class="custom-card-badge") Customization
-                                h2(class="custom-card-title") Tailor the interface to real user workflows
+                                span(class="custom-card-badge")
+                                    span(class="icon")
+                                        i(class="fas fa-gear")
+                                    span Customization
+                                h2(class="custom-card-title") Tailored Workflows
                                 p(class="custom-card-text") Adapt tools, menus, and views to the workflows users actually need.
                                 ul(class="custom-points")
                                     li Role-based interface setup
@@ -52,8 +384,11 @@ html(lang="en")
 
                         div(class="column is-12 is-6-desktop")
                             div(class="custom-card")
-                                span(class="custom-card-badge") Extensibility
-                                h2(class="custom-card-title") Add new functionality without rebuilding the platform
+                                span(class="custom-card-badge")
+                                    span(class="icon")
+                                        i(class="fas fa-puzzle-piece")
+                                    span Extensibility
+                                h2(class="custom-card-title") Extend Functionality
                                 p(class="custom-card-text") Extend QWC with plugins and custom tools while keeping the core stable.
                                 ul(class="custom-points")
                                     li Plugin-based extensions
@@ -62,8 +397,11 @@ html(lang="en")
 
                         div(class="column is-12 is-6-desktop")
                             div(class="custom-card")
-                                span(class="custom-card-badge") Integration
-                                h2(class="custom-card-title") Connect QWC to the systems already in use
+                                span(class="custom-card-badge")
+                                    span(class="icon")
+                                        i(class="fas fa-plug")
+                                    span Integration
+                                h2(class="custom-card-title") System Integration
                                 p(class="custom-card-text") Connect the client to existing services, APIs, and enterprise systems.
                                 ul(class="custom-points")
                                     li Standards-based services
@@ -72,8 +410,11 @@ html(lang="en")
 
                         div(class="column is-12 is-6-desktop")
                             div(class="custom-card")
-                                span(class="custom-card-badge") Scalability / Future-proofing
-                                h2(class="custom-card-title") Build for today’s project and tomorrow’s requirements
+                                span(class="custom-card-badge")
+                                    span(class="icon")
+                                        i(class="fas fa-chart-line")
+                                    span Scalability / Future-proofing
+                                h2(class="custom-card-title") Scalable Growth
                                 p(class="custom-card-text") Start focused and expand over time without replacing the platform.
                                 ul(class="custom-points")
                                     li Modular growth path
@@ -85,21 +426,29 @@ html(lang="en")
                         p(class="custom-value-text") These examples show how QWC can support both focused technical workflows and complex municipal deployments without forcing the same interface on every project.
                         div(class="columns is-multiline is-variable is-5 case-studies-grid")
                             +application("images/case-studies/fixpunkte-fpds2-1.png", "Fixpunkte FPDS2 case study screenshot", "Surveying Workflow", "Fixpunkte - FPDS2")
-                                | A specialized technical viewer for Swiss fixed-point data, built to support precise access to reference information through a focused and efficient interface.
+                                p(class="case-study-text") A specialized technical viewer for Swiss fixed-point data, built to support precise access to reference information through a focused and efficient interface.
                                 ul(class="case-study-points")
-                                    li Tailored to a domain-specific workflow instead of a generic public map portal.
-                                    li Presents structured geospatial information clearly for expert users.
-                                    li Shows how QWC can be shaped into a focused professional application.
-                            +application("images/case-studies/planas-stadt-frankfurt-1.png", "PlanAS Stadt Frankfurt case study screenshot", "Municipal Platform", "PlanAS City of Frankfurt")
-                                | A city-scale planning and urban information platform that demonstrates how QWC can support a richer municipal deployment with tailored content and specialized map tools.
+                                    +icon-point("fas fa-compass-drafting", "Tailored to a domain-specific workflow instead of a generic public map portal.")
+                                    +icon-point("fas fa-table-cells-large", "Presents structured geospatial information clearly for expert users.")
+                                    +icon-point("fas fa-screwdriver-wrench", "Shows how QWC can be shaped into a focused professional application.")
+                            +application("images/case-studies/planas-stadt-frankfurt-1.png", "PlanAS Stadt Frankfurt case study screenshot", "Municipal Platform", "PlanAS City of Frankfurt", "https://planas.frankfurt.de/")
+                                p(class="case-study-text") A city-scale planning and urban information platform that demonstrates how QWC can support a richer municipal deployment with tailored content and specialized map tools.
                                 ul(class="case-study-points")
-                                    li Organizes planning information in a way that fits municipal processes and public-sector needs.
-                                    li Combines custom presentation, workflow orientation, and project-specific functionality.
-                                    li Illustrates how the same platform can scale from narrow use cases to broader city deployments.
-                            +application("images/features/fachanwendungen-1.jpg", "Giswater screenshot", "Utility applicaiton", "Giswater")
-                                a(href="https://www.giswater.org/?lang=en") Giswater Homepage
-                            +application("images/case-studies/qgiscloud.png", "qgiscloud.com screenshot", "Cloud service", "qgiscloud.com")
-                                a(href="https://www.qgiscloud.com") QGIS Cloud Homepage
+                                    +icon-point("fas fa-city", "Organizes planning information in a way that fits municipal processes and public-sector needs.")
+                                    +icon-point("fas fa-brush", "Combines custom presentation, workflow orientation, and project-specific functionality.")
+                                    +icon-point("fas fa-up-right-and-down-left-from-center", "Illustrates how the same platform can scale from narrow use cases to broader city deployments.")
+                            +application("images/features/fachanwendungen-1.jpg", "Giswater screenshot", "Utility Application", "Giswater", "https://www.giswater.org/?lang=en")
+                                p(class="case-study-text") A domain-specific solution for water cycle management, integrating GIS with operational workflows for utilities and infrastructure management.
+                                ul(class="case-study-points")
+                                    +icon-point("fas fa-gears", "Combines spatial data with asset management, maintenance and operational processes.")
+                                    +icon-point("fas fa-water", "Provides a tailored interface for managing complex water infrastructure systems.")
+                                    +icon-point("fas fa-puzzle-piece", "Demonstrates how QWC can support specialized, process-driven applications beyond generic mapping.")
+                            +application("images/case-studies/qgiscloud.png", "qgiscloud.com screenshot", "Cloud service", "qgiscloud.com", "https://www.qgiscloud.com")
+                                p(class="case-study-text") A lightweight cloud-based platform for publishing and sharing QGIS projects on the web with minimal setup.
+                                ul(class="case-study-points")
+                                    +icon-point("fas fa-cloud-arrow-up", "Enables rapid deployment of maps and data without managing infrastructure.")
+                                    +icon-point("fas fa-plug", "Integrates directly with QGIS for seamless publishing workflows.")
+                                    +icon-point("fas fa-rocket", "Shows how QWC can power simple, accessible web GIS solutions as well as more advanced deployments.")
 
             section(class="section")
                 include includes/footer.pug
