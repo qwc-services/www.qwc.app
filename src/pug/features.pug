@@ -42,6 +42,10 @@ html(lang="en")
         include includes/head.pug
 
     body(class="page-with-fixed-navbar")
+        div(id="lightbox", class="lightbox")
+            span(class="lightbox-close") &times;
+            img(class="lightbox-content", id="lightbox-img")
+
         div#features-page
             nav(class="navbar site-navbar has-background-white py-5")
                 div(class="container is-fluid")
@@ -386,4 +390,35 @@ html(lang="en")
                             history.replaceState(null, '', targetId);
                         });
                     });
+                });
+
+                const lightbox = document.getElementById("lightbox");
+                const lightboxImg = document.getElementById("lightbox-img");
+                const lightboxCloseBtn = document.querySelector(".lightbox-close");
+
+                // Attach click handler to all carousel images
+                document.querySelectorAll(".showcase-slide img").forEach(img => {
+                    img.addEventListener("click", () => {
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = img.src;
+                    });
+                });
+
+                // Close on X click
+                lightboxCloseBtn.addEventListener("click", () => {
+                    lightbox.style.display = "none";
+                });
+
+                // Close on background click
+                lightbox.addEventListener("click", (e) => {
+                    if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                    }
+                });
+
+                // Close on ESC key
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") {
+                    lightbox.style.display = "none";
+                    }
                 });
