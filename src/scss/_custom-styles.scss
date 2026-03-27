@@ -1,3 +1,5 @@
+/* @import url("https://fonts.googleapis.com/css?family=Inter:400&subset=latin"); */
+
 :root {
     --qwc-blue-text: #2b6c8f;
     --qwc-green-deep: #447528;
@@ -1061,7 +1063,6 @@ html {
         background-color: transparent !important;
         border: 0 !important;
         color: #13212f !important;
-        font-family: Poppins, sans-serif !important;
         font-size: clamp(2.7rem, 4.8vw, 3.95rem) !important;
         line-height: 0.92 !important;
         font-weight: 900 !important;
